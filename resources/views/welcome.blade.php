@@ -1,741 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Index - Consulting Bootstrap Template</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link href="{{ asset('images/logo pak.png') }}" rel="icon" />
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Pt Pendi Abadi Karya</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link href="{{ asset('images/logo pak.png') }}" rel="icon" />
 
-    <!-- Favicons -->
+        <!-- Favicons -->
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Vendor CSS Files -->
-    <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet" />
-    <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet" />
-    <link href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet" />
+        <!-- Vendor CSS Files -->
+        <link
+            href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}"
+            rel="stylesheet"
+        />
+        <link
+            href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css')}}"
+            rel="stylesheet"
+        />
+        <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet" />
+        <link
+            href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}"
+            rel="stylesheet"
+        />
 
-    <!-- Main CSS File -->
-    <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" />
+        <!-- Main CSS File -->
+        <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" />
 
-    <!-- =======================================================
-  * Template Name: Consulting
-  * Template URL: https://bootstrapmade.com/bootstrap-consulting-website-template/
-  * Updated: May 01 2025 with Bootstrap v5.3.5
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  </head>
+      <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
 
-  <body class="index-page">
-    <header id="header" class="header d-flex align-items-center fixed-top">
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <img src="{{asset('images/logo pak no bg.png')}}" alt="">
-          <h1 class="sitename">PT PENDI ABADI KARYA</h1>
-        </a>
+<script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
+    </head>
 
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="#hero" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <!-- <li><a href="#why-choose-us">Why Choose Us</a></li> -->
-            <li><a href="#project">Project</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <!-- <li><a href="#pricing">Pricing</a></li> -->
-            <li><a href="#team">Team</a></li>
-            <!-- <li class="dropdown">
-              <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown">
-                  <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
-              </ul>
-            </li> -->
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
+    <body class="index-page">
+        @include('navbar')
+        <main class="main">
+            @include('hero')
+            @include('why-choose-us')
+            @include('vision-and-mission')
+            @include('services')
+            @include('project')
+            @include('portfolio')
+            @include('team')
+            @include('contact')
+        </main>
+        @include('footer')
 
-        <a class="btn-getstarted" href="#consultation">Get Started</a>
-      </div>
-    </header>
+        <!-- Scroll Top -->
+        <a
+            href="#"
+            id="scroll-top"
+            class="scroll-top d-flex align-items-center justify-content-center"
+            ><i class="bi bi-arrow-up-short"></i
+        ></a>
 
-    <main class="main">
-      <!-- Hero Section -->
-      <section id="hero" class="hero section dark-background">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
-                <h2>Strategic Solutions for Business Growth</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua.
-                </p>
-                <div class="hero-btns">
-                  <a href="#consultation" class="btn btn-primary">Get a Free Consultation</a>
-                  <a href="#services" class="btn btn-outline">Our Services</a>
-                </div>
-                <div class="hero-stats">
-                  <div class="stat-item">
-                    <h3><span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>+</h3>
-                    <p>Years Experience</p>
-                  </div>
-                  <div class="stat-item">
-                    <h3><span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>+</h3>
-                    <p>Clients Worldwide</p>
-                  </div>
-                  <div class="stat-item">
-                    <h3><span data-purecounter-start="0" data-purecounter-end="98" data-purecounter-duration="1" class="purecounter"></span>%</h3>
-                    <p>Success Rate</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-                <img src="assets/img/about/about-21.webp" alt="Consulting Services" class="img-fluid" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /Hero Section -->
-      <section class="py-5 bg-light section">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row align-items-center " >
-            
-       
+        <!-- Preloader -->
 
-         
+        <!-- Vendor JS Files -->
+        <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
+        <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>
+        <script src="{{asset('assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+        <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
 
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <section id="about" class="about section">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row align-items-center">
-            <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200">
-              <div class="about-image">
-                <img src="assets/img/about/about-square-12.webp" alt="About Our Consulting Firm" class="img-fluid main-image" />
-                <div class="experience-badge">
-                  <span class="years">15+</span>
-                  <span class="text">Years of Experience</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="about-content">
-                <h2>We Help Businesses Reach Their Full Potential</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                  veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                </p>
-
-                <div class="row features-row">
-                  <div class="col-md-6">
-                    <div class="feature-item">
-                      <div class="icon">
-                        <i class="bi bi-graph-up-arrow"></i>
-                      </div>
-                      <h4>Business Growth</h4>
-                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="feature-item">
-                      <div class="icon">
-                        <i class="bi bi-lightbulb"></i>
-                      </div>
-                      <h4>Innovative Solutions</h4>
-                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="feature-item">
-                      <div class="icon">
-                        <i class="bi bi-people"></i>
-                      </div>
-                      <h4>Expert Team</h4>
-                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="feature-item">
-                      <div class="icon">
-                        <i class="bi bi-trophy"></i>
-                      </div>
-                      <h4>Proven Results</h4>
-                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="cta-button">
-                  <a href="#about" class="btn btn-primary">Learn More About Us</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /About Section -->
-
-      <!-- Work Process Section -->
-      <section id="work-process" class="work-process section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Vision and Mission</h2>
-          <div><span>Check Our</span> <span class="description-title">Vision and Mission</span></div>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row">
-              <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="300">
-                <div class="container section-title" data-aos="fade-up">
-                  <h2>Our Vision</h2>
-                  <div><span></span> <span class="description-title">Vision</span></div>
-                </div>
-              <div class="steps-list">
-                <div class="step-item">
-                  <div class="step-number">01</div>
-                  <div class="step-content">
-                    <!-- <h3>Lorem Ipsum</h3> -->
-                    <h5>Perusahaan yang <strong> terpercaya</strong>, <strong>berkualitas</strong> , dan <strong>berinovasi</strong>  </h5>
-                  </div>
-                </div>
-
-                <div class="step-item">
-                  <div class="step-number">02</div>
-                  <div class="step-content">
-                    <!-- <h3>Amet</h3> -->
-                    <h5>Perusahaan memberikan <strong>manfaat</strong>  bagi <strong>masyarakat</strong>  dan <strong>lingkungan</strong> </h5>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="300">
-              <div class="container section-title" data-aos="fade-up">
-                <h2>Our Mission</h2>
-                <div><span></span> <span class="description-title">Mission</span></div>
-              </div>
-              <div class="steps-list">
-                <div class="step-item">
-                  <div class="step-number">01</div>
-                  <div class="step-content">
-                    <!-- <h3>Dolor Sit</h3> -->
-                    <h5> <strong>Menyediakan jasa kontraktor terbaik  </strong> </h5>
-                    <h6>
-Dengan memperhatikan kebutuhan klien, memberikan rasa aman dan nyaman melalui ketepatan waktu, kualitas pengerjaan, dan transparansi harga.
-                    </h6>
-                  </div>
-                </div>
-
-                <div class="step-item">
-                  <div class="step-number">02</div>
-                  <div class="step-content">
-                    <!-- <h3>Ipsum</h3> -->
-                    <h5> <strong>Menjadi perusahaan konstruksi terpercaya dan berkualitas tinggi </strong>
-                    </h5>
-                    <h6>Menyediakan jasa dan produk konstruksi bermutu tinggi secara profesional dan berkesinambungan.</h6>  
-                  </div>
-                </div>
-
-                <div class="step-item">
-                  <div class="step-number">03</div>
-                  <div class="step-content">
-                    <!-- <h3>Lorem</h3> -->
-                    <h5> <strong>Memberdayakan masyarakat Indonesia </strong>  </h5>
-                    <h6>
-                      Melalui pemanfaatan teknologi dan tenaga kerja, menciptakan lapangan kerja dan layanan bernilai tambah.
-                    </h6>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /Work Process Section -->
-
-      <!-- Services Section -->
-      <section id="services" class="services section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Services</h2>
-          <div><span>Check Our</span> <span class="description-title">Services</span></div>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4">
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="service-card">
-                <div class="icon-box">
-                  <i class="bi bi-bar-chart-line"></i>
-                </div>
-                <h3>Perencanaan Proyek</h3>
-                <p>Kami melakukan tahap perencanaan secara menyeluruh untuk memastikan proyek berjalan sesuai target waktu, biaya, dan kualitas yang diharapkan. Tahapan ini mencakup:</p>
-                <ul class="service-features">
-                  <li><i class="bi bi-check-circle"></i> Desain</li>
-                  <li><i class="bi bi-check-circle"></i> Budgeting</li>
-                  <!-- <li><i class="bi bi-check-circle"></i> Growth Strategies</li> -->
-                </ul>
-                <a href="service-details.html" class="read-more">Learn More <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="service-card">
-                <div class="icon-box">
-                  <i class="bi bi-briefcase"></i>
-                </div>
-                <h3>Pelaksanaan Proyek</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                <ul class="service-features">
-                  <li><i class="bi bi-check-circle"></i> Persiapan Pekerjaan</li>
-                  <li><i class="bi bi-check-circle"></i> Pondasi</li>
-                  <li><i class="bi bi-check-circle"></i> Struktur</li>
-                  <li><i class="bi bi-check-circle"></i> Finishing</li>
-                </ul>
-                <a href="service-details.html" class="read-more">Learn More <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-              <div class="service-card">
-                <div class="icon-box">
-                  <i class="bi bi-cash-coin"></i>
-                </div>
-                <h3>Pengawasan Proyek</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                <ul class="service-features">
-                  <li><i class="bi bi-check-circle"></i>Pengawasan Teknis</li>
-                  <li><i class="bi bi-check-circle"></i> Pengawasan Kualitas</li>
-                  <li><i class="bi bi-check-circle"></i> Pengawasan keuangan</li>
-                </ul>
-                <a href="service-details.html" class="read-more">Learn More <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            </div>
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-              <div class="service-card">
-                <div class="icon-box">
-                  <i class="bi bi-people"></i>
-                </div>
-                <h3>Jenis Proyeksi Kontruksi</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                <ul class="service-features">
-                  <li><i class="bi bi-check-circle"></i> Kontruksi Perumahan</li>
-                  <li><i class="bi bi-check-circle"></i>Kontruksi Gedung</li>
-                </ul>
-                <a href="service-details.html" class="read-more">Learn More <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            </div>
-            
-          </div>
-
-          <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="800">
-            <a href="#contact" class="btn btn-primary">Request a Consultation</a>
-          </div>
-        </div>
-      </section>
-      <!-- /Services Section -->
-
-  
-      <!-- Why Choose Us Section -->
-      <section id="why-choose-us" class="why-choose-us section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Why Choose Us</h2>
-          <div><span>Why Choose</span> <span class="description-title">Our Services</span></div>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row align-items-center">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="features-content">
-                <h2>Why Choose Our Consulting Services</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                  veritatis.
-                </p>
-
-                <div class="features-list">
-                  <div class="feature-item">
-                    <div class="feature-icon">
-                      <i class="bi bi-award"></i>
-                    </div>
-                    <div class="feature-text">
-                      <h4>Industry Expertise</h4>
-                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.</p>
-                    </div>
-                  </div>
-
-                  <div class="feature-item">
-                    <div class="feature-icon">
-                      <i class="bi bi-graph-up"></i>
-                    </div>
-                    <div class="feature-text">
-                      <h4>Data-Driven Approach</h4>
-                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.</p>
-                    </div>
-                  </div>
-
-                  <div class="feature-item">
-                    <div class="feature-icon">
-                      <i class="bi bi-clock-history"></i>
-                    </div>
-                    <div class="feature-text">
-                      <h4>Timely Delivery</h4>
-                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.</p>
-                    </div>
-                  </div>
-
-                  <div class="feature-item">
-                    <div class="feature-icon">
-                      <i class="bi bi-shield-check"></i>
-                    </div>
-                    <div class="feature-text">
-                      <h4>Guaranteed Results</h4>
-                      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="features-image">
-                <div class="stats-card">
-                  <div class="stat-item">
-                    <h3><span data-purecounter-start="0" data-purecounter-end="95" data-purecounter-duration="1" class="purecounter"></span>%</h3>
-                    <p>Client Satisfaction</p>
-                  </div>
-                  <div class="stat-item">
-                    <h3><span data-purecounter-start="0" data-purecounter-end="250" data-purecounter-duration="1" class="purecounter"></span>+</h3>
-                    <p>Projects Completed</p>
-                  </div>
-                  <div class="stat-item">
-                    <h3><span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1" class="purecounter"></span>+</h3>
-                    <p>Industry Awards</p>
-                  </div>
-                  <div class="stat-item">
-                    <h3><span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>+</h3>
-                    <p>Countries Served</p>
-                  </div>
-                </div>
-                <img src="assets/img/misc/misc-square-11.webp" alt="" class="img-fluid main-image" />
-                <div class="experience-badge">
-                  <div class="badge-content">
-                    <span class="number">15+</span>
-                    <span class="text">Years of Excellence</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /Why Choose Us Section -->
-
-      <!-- Team Section -->
-      <section id="team" class="team section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Team</h2>
-          <div><span>Check Our</span> <span class="description-title">Expert Team</span></div>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="team-slider swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 800,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": 1,
-                "spaceBetween": 30,
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                },
-                "navigation": {
-                  "nextEl": ".swiper-button-next",
-                  "prevEl": ".swiper-button-prev"
-                },
-                "breakpoints": {
-                  "576": {
-                    "slidesPerView": 2
-                  },
-                  "992": {
-                    "slidesPerView": 3
-                  },
-                  "1200": {
-                    "slidesPerView": 4
-                  }
-                }
-              }
-            </script>
-              
-            <div class="swiper-wrapper d-flex justify-content-center">
-              <div class="swiper-slide ">
-                <div class="team-card">
-                  <div class="team-image">
-                    <img src="assets/img/person/person-m-3.webp" class="img-fluid" alt="" loading="lazy" />
-                    <div class="team-overlay">
-                      <div class="social-links">
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="team-content">
-                    <h3>Supandi</h3>
-                    <span>Direktur</span>
-                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p> -->
-                  </div>
-                </div>
-                <!-- End Team Card -->
-              </div>
-              <!-- End slide item -->
-
-              <div class="swiper-slide">
-                <div class="team-card">
-                  <div class="team-image">
-                    <img src="assets/img/person/person-f-5.webp" class="img-fluid" alt="" loading="lazy" />
-                    <div class="team-overlay">
-                      <div class="social-links">
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="team-content">
-                    <h3>Samsuri</h3>
-                    <span>Komisaris</span>
-                    <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> -->
-                  </div>
-                </div>
-                <!-- End Team Card -->
-              </div>
-              <!-- End slide item -->
-
-              <div class="swiper-slide">
-                <div class="team-card">
-                  <div class="team-image">
-                    <img src="assets/img/person/person-m-8.webp" class="img-fluid" alt="" loading="lazy" />
-                    <div class="team-overlay">
-                      <div class="social-links">
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="team-content">
-                    <h3>Marta Tobing</h3>
-                    <span>Executive Admin</span>
-                    <!-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
-                  </div>
-                </div>
-                <!-- End Team Card -->
-              </div>
-              <!-- End slide item -->
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-        </div>
-      </section>
-      <!-- /Team Section -->
-
-      
-
-      <!-- Contact Section -->
-      <section id="contact" class="contact section"  data-aos="fade-up">
-        <!-- Section Title -->
-        <div class="container section-title"  >
-          <h2>Contact</h2>
-          <div><span>Contact</span> <span class="description-title">Us</span></div>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-5">
-              <div class="contact-info">
-                <div class="contact-card">
-                  <h3>Contact Information</h3>
-                  <p>Silakan hubungi kami untuk informasi proyek, penawaran kerja sama, atau pertanyaan lainnya.</p>
-
-                  <div class="contact-details">
-                    <div class="contact-item">
-                      <i class="bi bi-envelope"></i>
-                      <div>
-                        <h4>Email:</h4>
-                        <p> pendiabadikarya@gmail.com</p>
-                      </div>
-                    </div>
-
-                    <div class="contact-item">
-                      <i class="bi bi-telephone"></i>
-                      <div>
-                        <h4>Phone:</h4>
-                        <p>+62 853 3805 3331</p>
-                      </div>
-                    </div>
-
-                    <div class="contact-item">
-                      <i class="bi bi-geo-alt"></i>
-                      <div>
-                        <h4>Address:</h4>
-                        <p>Jln. Gigit Sari No.3 Jimbaran, Bali, Indonesia</p>
-                        <!-- <p>Wordsmith City, NY 10001</p> -->
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="social-links">
-                    <a href="#"><i class="bi bi-twitter"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-7">
-              
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /Contact Section -->
-    </main>
-
-    <footer id="footer" class="footer light-background">
-      <div class="container">
-        <div class="row gy-3">
-          <div class="col-lg-3 col-md-6 d-flex">
-            <i class="bi bi-geo-alt icon"></i>
-            <div class="address">
-              <h4>Address</h4>
-              <p>Jln. Gigit Sari No.3 Jimbaran, Bali, Indonesia</p>
-              <p></p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex">
-            <i class="bi bi-telephone icon"></i>
-            <div>
-              <h4>Contact</h4>
-              <p>
-                <strong>Phone:</strong> <span>+62 853 3805 3331</span><br />
-                <strong>Email:</strong> <span> pendiabadikarya@gmail.com</span><br />
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex">
-            <i class="bi bi-clock icon"></i>
-            <div>
-              <h4>Opening Hours</h4>
-              <p>
-                <strong>Mon-Sat:</strong> <span>8AM - 17PM</span><br />
-                <strong>Sunday</strong>: <span>Closed</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <h4>Follow Us</h4>
-            <div class="social-links d-flex">
-              <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container copyright text-center mt-4">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Pt. Pendi Abadi Karya</strong> <span>All Rights Reserved</span></p>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
-        </div>
-      </div>
-    </footer>
-
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Preloader -->
-    <div id="preloader"></div>
-
-    <!-- Vendor JS Files -->
-    <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
-    <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>
-    <script src="{{asset('assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
-    <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-
-    <!-- Main JS File -->
-    <script src="{{asset('assets/js/main.js')}}"></script>
-  </body>
+        <!-- Main JS File -->
+        <script src="{{asset('assets/js/main.js')}}"></script>
+    </body>
 </html>
