@@ -27,7 +27,7 @@
                                         >Our Services</a
                                     >
                                 </div>
-                                <div class="hero-stats">`
+                                <div class="hero-stats">
                                     <div class="stat-item">
                                         <h3>
                                             <span
@@ -74,7 +74,7 @@
                                 data-aos-delay="300"
                             >
                                 <img
-                                    src="assets/img/about/about-21.webp"
+                                    src="{{asset('images/villa-nusa-dua.jpeg')}}"
                                     alt="Consulting Services"
                                     class="img-fluid"
                                 />

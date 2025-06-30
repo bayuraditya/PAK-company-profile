@@ -100,6 +100,10 @@
             {{-- End Looping Portfolio Items --}}
 
         </div>
+        
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="700">
+            <a href="#" class="btn-get-started">Lihat Semua Portfolio</a>
+        </div>
         </div>
 </section>
 

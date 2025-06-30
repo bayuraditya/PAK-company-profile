@@ -7,7 +7,7 @@
                     class="logo d-flex align-items-center me-auto me-xl-0"
                 >
                     <!-- Uncomment the line below if you also wish to use an image logo -->
-                    <img src="{{asset('images/logo pak no bg.png')}}" alt="" />
+                    <img src="{{asset('images/logo pak putih.png')}}" alt="" />
                     <h4 class="sitename fw-bold">PT PENDI ABADI KARYA</h4>
                 </a>
 
