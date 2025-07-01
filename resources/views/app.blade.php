@@ -36,28 +36,20 @@
         <!-- Main CSS File -->
         <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" />
 
-      <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+        <link
+            href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}"
+            rel="stylesheet"
+        />
 
-<script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-<script src="{{ asset('assets/js/main.js') }}"></script>
+        <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
+        @stack('styles')
     </head>
 
     <body class="index-page">
         @include('navbar')
-        <main class="main">
-            @include('hero')
-            @include('why-choose-us')
-            @include('vision-and-mission')
-            @include('services')
-            @include('project')
-            <!-- gaisi portfolio karena sama aja isinya sama project -->
-            
-            <!-- tambahkan galleries berisi semua foto foto ambil dari public sebagai gantinya -->
-            @include('galleries')
-            @include('team')
-            @include('contact')
-        </main>
+        <main class="main">@yield('content')</main>
         @include('footer')
 
         <!-- Scroll Top -->
@@ -79,5 +71,6 @@
 
         <!-- Main JS File -->
         <script src="{{asset('assets/js/main.js')}}"></script>
+        @stack('scripts')
     </body>
 </html>

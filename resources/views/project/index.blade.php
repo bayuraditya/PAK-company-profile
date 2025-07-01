@@ -1,48 +1,48 @@
 @extends('app') {{-- Sesuaikan dengan layout utama Anda --}}
 
-@section('title', 'Semua Portfolio Kami')
+@section('title', 'Semua Proyek Kami')
 
 @section('content')
     <main id="main" class="">
         <div class="breadcrumbs">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>Semua Portfolio</h2>
+                    <h2>Semua Proyek</h2>
                     <ol>
                         <li><a href="{{ url('/') }}">Beranda</a></li>
-                        <li>Semua Portfolio</li>
+                        <li>Semua Proyek</li>
                     </ol>
                 </div>
             </div>
         </div>
-        <section id="all-portfolios" class="all-portfolios section">
+        <section id="all-projects" class="all-projects section">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
-                    <h2>Seluruh Portfolio Kami</h2>
+                    <h2>Seluruh Karya Kami</h2>
                     <p>Jelajahi portofolio lengkap proyek-proyek konstruksi kami dari berbagai kategori.</p>
                 </div>
 
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    @forelse ($allPortfolios as $portfolio)
+                    @forelse ($allProjects as $project)
                     <div class="col">
-                        <div class="portfolio-item">
-                            <div class="portfolio-img-container">
+                        <div class="project-item">
+                            <div class="project-img-container">
                                 <img
-                                    src="{{ asset($portfolio['image']) }}"
+                                    src="{{ asset($project['image']) }}"
                                     class="img-fluid"
-                                    alt="{{ $portfolio['title'] }}"
+                                    alt="{{ $project['title'] }}"
                                 />
-                                <div class="portfolio-overlay">
+                                <div class="project-overlay">
                                     {{-- Anda bisa arahkan ke halaman detail proyek tunggal jika ada --}}
-                                    <a href="portfolio/{{$portfolio['slug']}}" title="Lihat Detail Proyek" class="details-link-overlay">
+                                    <a href="project/{{$project['slug']}}" title="Lihat Detail Proyek" class="details-link-overlay">
                                         <i class="bi bi-link-45deg"></i> Lihat Detail
                                     </a>
                                 </div>
                             </div>
-                            <div class="portfolio-info">
-                                <h4>{{ $portfolio['title'] }}</h4>
-                                <p class="portfolio-category">{{ $portfolio['category'] }}</p>
-                                <p>{{ $portfolio['description'] }}</p>
+                            <div class="project-info">
+                                <h4>{{ $project['title'] }}</h4>
+                                <p class="project-category">{{ $project['category'] }}</p>
+                                <p>{{ $project['description'] }}</p>
                             </div>
                         </div>
                     </div>
@@ -58,10 +58,10 @@
 @endsection
 
 @push('styles')
-    {{-- Anda mungkin perlu menambahkan kembali style untuk portfolio-item di sini, atau pastikan sudah terload dari global CSS --}}
+    {{-- Anda mungkin perlu menambahkan kembali style untuk project-item di sini, atau pastikan sudah terload dari global CSS --}}
     <style>
         /* Mengulang atau memastikan gaya untuk kartu proyek dari halaman utama */
-        .all-portfolios .portfolio-item {
+        .all-projects .project-item {
             background-color: #fff;
             border-radius: 10px;
             overflow: hidden;
@@ -72,19 +72,19 @@
             flex-direction: column;
         }
 
-        .all-portfolios .portfolio-item:hover {
+        .all-projects .project-item:hover {
             transform: translateY(-8px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .all-portfolios .portfolio-img-container {
+        .all-projects .project-img-container {
             position: relative;
             overflow: hidden;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
 
-        .all-portfolios .portfolio-img-container img {
+        .all-projects .project-img-container img {
             width: 100%;
             height: 250px; /* Atur tinggi gambar sesuai kebutuhan */
             object-fit: cover;
@@ -92,11 +92,11 @@
             transition: transform 0.5s ease;
         }
 
-        .all-portfolios .portfolio-item:hover .portfolio-img-container img {
+        .all-projects .project-item:hover .project-img-container img {
             transform: scale(1.1);
         }
 
-        .all-portfolios .portfolio-overlay {
+        .all-projects .project-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -110,11 +110,11 @@
             transition: opacity 0.4s ease;
         }
 
-        .all-portfolios .portfolio-item:hover .portfolio-overlay {
+        .all-projects .project-item:hover .project-overlay {
             opacity: 1;
         }
 
-        .all-portfolios .details-link-overlay {
+        .all-projects .details-link-overlay {
             color: #fff;
             font-size: 1.1rem;
             padding: 10px 20px;
@@ -128,7 +128,7 @@
             animation-delay: 0.2s;
         }
 
-        .all-portfolios .portfolio-item:hover .details-link-overlay {
+        .all-projects .project-item:hover .details-link-overlay {
             opacity: 1;
             transform: translateY(0);
         }
@@ -144,16 +144,16 @@
             }
         }
 
-        .all-portfolios .details-link-overlay:hover {
+        .all-projects .details-link-overlay:hover {
             background-color: #fff;
             color: #018880; /* Warna aksen Anda */
         }
 
-        .all-portfolios .details-link-overlay i {
+        .all-projects .details-link-overlay i {
             margin-right: 8px;
         }
 
-        .all-portfolios .portfolio-info {
+        .all-projects .project-info {
             padding: 20px;
             text-align: center;
             flex-grow: 1;
@@ -162,14 +162,14 @@
             justify-content: flex-start;
         }
 
-        .all-portfolios .portfolio-info h4 {
+        .all-projects .project-info h4 {
             font-size: 1.5rem;
             color: var(--heading-color, #333);
             margin-bottom: 8px;
             font-weight: 600;
         }
 
-        .all-portfolios .portfolio-info .portfolio-category {
+        .all-projects .project-info .project-category {
             font-size: 0.9rem;
             color: #777;
             margin-bottom: 15px;
@@ -177,7 +177,7 @@
             font-style: italic;
         }
 
-        .all-portfolios .portfolio-info p {
+        .all-projects .project-info p {
             font-size: 1rem;
             color: #555;
             line-height: 1.6;

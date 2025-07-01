@@ -6,9 +6,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GuestController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
-
+use App\Models\Portfolio;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,6 +21,15 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login')->m
 // Proses Login
 Route::post('/login', [AuthController::class, 'login'])->middleware('guest');
 
+Route::name('project.')->prefix('project')->group(function () {
+    Route::get('/', [GuestController::class, 'project'])->name('index');
+    Route::get('/{slug}', [GuestController::class, 'showProjectDetail'])->name('show');
+});
+
+Route::name('portfolio.')->prefix('portfolio')->group(function () {
+    Route::get('/', [GuestController::class, 'portfolio'])->name('index');
+    Route::get('/{slug}', [GuestController::class, 'showPortfolioDetail'])->name('show');
+});
 
 // Admin Routes (untuk authenticated users)
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
@@ -35,6 +46,15 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/{project}/edit', [ProjectController::class, 'edit'])->name('edit');
         Route::put('/{project}', [ProjectController::class, 'update'])->name('update');
         Route::delete('/{project}', [ProjectController::class, 'destroy'])->name('destroy');
+    });
+    Route::name('portfolio.')->prefix('portfolio')->group(function () {
+        Route::get('/', [PortfolioController::class, 'index'])->name('index');
+        Route::get('/create', [PortfolioController::class, 'create'])->name('create');
+        Route::post('/', [PortfolioController::class, 'store'])->name('store');
+        Route::get('/{portfolio}', [PortfolioController::class, 'show'])->name('show');
+        Route::get('/{portfolio}/edit', [PortfolioController::class, 'edit'])->name('edit');
+        Route::put('/{portfolio}', [PortfolioController::class, 'update'])->name('update');
+        Route::delete('/{portfolio}', [PortfolioController::class, 'destroy'])->name('destroy');
     });
 
     // Team CRUD

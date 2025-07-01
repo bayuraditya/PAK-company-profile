@@ -1,299 +1,235 @@
-<section id="portfolio" class="portfolio section">
+<section id="portfolio" class="contact section" data-aos="fade-up">
     <div class="container section-title">
         <h2>Portfolio</h2>
         <div>
             <span>Jelajahi</span>
-            <span class="description-title">Portfolio Kami</span>
+            <span class="description-title"> Portfolio Kami</span>
         </div>
     </div>
     <div class="container">
-        {{-- Filter Kategori --}}
-        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">Semua</li>
-            <li data-filter=".filter-konstruksi">Konstruksi</li>
-            <li data-filter=".filter-renovasi">Renovasi</li>
-            <li data-filter=".filter-desain">Desain Interior</li>
-            <li data-filter=".filter-infrastruktur">Infrastruktur</li>
-            {{-- Anda bisa menambahkan lebih banyak kategori di sini --}}
-        </ul>
-        <div class="row isotope-container gy-4" data-aos="fade-up" data-aos-delay="200">
-
-            {{-- Data Dummy Project (akan diganti dengan data compact dari Controller) --}}
-            @php
-                $projects = [
-                    [
-                        'title' => 'Gedung Perkantoran Maju',
-                        'category' => 'Konstruksi Bangunan',
-                        'filter_class' => 'filter-konstruksi',
-                        'image' => 'images/portfolio/villa-nusa-dua.jpeg', // Gunakan gambar sementara
-                        'description' => 'Pembangunan gedung perkantoran modern di pusat bisnis.',
-                    ],
-                    [
-                        'title' => 'Renovasi Vila Harmoni',
-                        'category' => 'Renovasi & Residensial',
-                        'filter_class' => 'filter-renovasi',
-                        'image' => 'images/portfolio/villa-nusa-dua.jpeg', // Gunakan gambar sementara
-                        'description' => 'Renovasi total vila dengan sentuhan desain kontemporer.',
-                    ],
-                    [
-                        'title' => 'Desain Interior Restoran',
-                        'category' => 'Desain Interior',
-                        'filter_class' => 'filter-desain',
-                        'image' => 'images/portfolio/villa-nusa-dua.jpeg', // Gunakan gambar sementara
-                        'description' => 'Perancangan interior restoran dengan konsep industrial.',
-                    ],
-                    [
-                        'title' => 'Pembangunan Jalan Layang Baru',
-                        'category' => 'Infrastruktur Jalan',
-                        'filter_class' => 'filter-infrastruktur',
-                        'image' => 'images/portfolio/villa-nusa-dua.jpeg', // Gunakan gambar sementara
-                        'description' => 'Proyek strategis pembangunan jalan layang untuk mengurangi kemacetan.',
-                    ],
-                    [
-                        'title' => 'Pusat Logistik Modern',
-                        'category' => 'Konstruksi Industri',
-                        'filter_class' => 'filter-konstruksi',
-                        'image' => 'images/portfolio/villa-nusa-dua.jpeg', // Gunakan gambar sementara
-                        'description' => 'Pembangunan pusat distribusi dan logistik berteknologi tinggi.',
-                    ],
-                    [
-                        'title' => 'Renovasi Hotel Bintang Lima',
-                        'category' => 'Renovasi & Hospitality',
-                        'filter_class' => 'filter-renovasi',
-                        'image' => 'images/portfolio/villa-nusa-dua.jpeg', // Gunakan gambar sementara
-                        'description' => 'Pembaruan fasilitas dan interior hotel untuk meningkatkan kenyamanan tamu.',
-                    ],
-                    [
-                        'title' => 'Desain Kantor Startup',
-                        'category' => 'Desain Interior',
-                        'filter_class' => 'filter-desain',
-                        'image' => 'images/portfolio/villa-nusa-dua.jpeg', // Gunakan gambar sementara
-                        'description' => 'Desain ruang kerja yang dinamis dan kolaboratif untuk perusahaan startup.',
-                    ],
-                ];
-            @endphp
-
-            @foreach ($projects as $project)
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{ $project['filter_class'] }}">
-                <div class="portfolio-content h-100">
-                    <img
-                        src="{{ asset($project['image']) }}"
-                        class="img-fluid"
-                        alt="{{ $project['title'] }}"
-                    />
-                    <div class="portfolio-info">
-                        <h4>{{ $project['title'] }}</h4>
-                        <p>{{ $project['category'] }}</p>
-                        <a
-                            href="{{ asset($project['image']) }}"
-                            title="{{ $project['title'] }}"
-                            data-gallery="portfolio-gallery"
-                            class="glightbox preview-link"
-                        ><i class="bi bi-zoom-in"></i></a>
-                        {{-- Link ini bisa mengarah ke halaman detail proyek jika ada --}}
-                        <a href="#" title="Detail Lebih Lanjut" class="details-link"
-                        ><i class="bi bi-link-45deg"></i></a>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {{-- Loop untuk menampilkan 8 portfolio --}} @for ($i = 1; $i <= 8;
+            $i++)
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    {{-- Carousel untuk banyak gambar --}}
+                    <div
+                        id="portfolioCarousel{{ $i }}"
+                        class="carousel slide"
+                        data-bs-ride="carousel"
+                    >
+                        <div class="carousel-inner">
+                            {{-- Contoh gambar untuk setiap slide --}}
+                            <div class="carousel-item active">
+                                <img
+                                    src="{{asset('images/villa-nusa-dua.jpeg')}}"
+                                    class="d-block w-100"
+                                    alt="Proyek {{ $i }} Gambar 1"
+                                />
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                    src="{{asset('images/villa-nusa-dua.jpeg')}}"
+                                    class="d-block w-100"
+                                    alt="Proyek {{ $i }} Gambar 2"
+                                />
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                    src="{{asset('images/villa-nusa-dua.jpeg')}}"
+                                    class="d-block w-100"
+                                    alt="Proyek {{ $i }} Gambar 3"
+                                />
+                            </div>
+                        </div>
+                        <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#portfolioCarousel{{ $i }}"
+                            data-bs-slide="prev"
+                        >
+                            <span
+                                class="carousel-control-prev-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#portfolioCarousel{{ $i }}"
+                            data-bs-slide="next"
+                        >
+                            <span
+                                class="carousel-control-next-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Villa {{ $i }}</h5>
+                        <!-- <p class="card-text text-muted">
+                            Lokasi: Nusa Dua, Bali
+                        </p> -->
+                        <p class="card-text">
+                            Civil, MEP, Interior
+                        </p>
+                       <a
+                            href="/portfolio/{{$i}}"
+                            class="btn btn-primary btn-sm"
+                        >
+                            Lihat Detail
+                        </a>
                     </div>
                 </div>
             </div>
-            @endforeach
-            {{-- End Looping Portfolio Items --}}
 
+            @endfor
         </div>
-        
-        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="700">
-            <a href="#" class="btn-get-started">Lihat Semua Portfolio</a>
-        </div>
+    </div>
+    <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="700">
+            <a href="/portfolio" class="btn-get-started">Lihat Semua Portfolio</a>
         </div>
 </section>
-
 <style>
-   
-/* Portfolio Filters */
-.portfolio-filters {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 35px 0;
-    text-align: center;
-}
+    /* public/css/app.css atau di dalam <style> di layout Anda */
 
-.portfolio-filters li {
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 10px 10px 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1;
-    color: var(--default-color, #555);
-    transition: all 0.3s ease;
-    padding: 8px 18px;
-    border-radius: 4px;
-    background-color: #f5f5f5;
-}
-
-.portfolio-filters li:hover,
-.portfolio-filters li.filter-active {
-    background-color: var(--accent-color, #007bff);
-    color: #fff;
-}
-
-/* Portfolio Items */
-.portfolio-item {
-    margin-bottom: 30px; /* Spasi antar item */
-}
-
-.portfolio-content {
-    background-color: #fff;
-    border-radius: 10px; /* Rounded border seperti project-item */
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Shadow seperti project-item */
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-    height: 100%;
-    position: relative; /* Untuk overlay */
-}
-
-.portfolio-content:hover {
-    transform: translateY(-8px); /* Mengangkat kartu sedikit saat hover */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Shadow lebih menonjol saat hover */
-}
-
-.portfolio-content img {
-    width: 100%;
-    height: 300px; /* Tinggi gambar bisa disesuaikan */
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease; /* Animasi zoom pada gambar */
-}
-
-.portfolio-content:hover img {
-    transform: scale(1.1); /* Efek zoom in pada gambar saat hover */
-}
-
-.portfolio-info {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Overlay hitam transparan */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 0.4s ease; /* Animasi fade in overlay */
-}
-
-.portfolio-content:hover .portfolio-info {
-    opacity: 1; /* Overlay muncul saat hover */
-}
-
-.portfolio-info h4 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    color: #fff;
-    text-align: center;
-}
-
-.portfolio-info p {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.portfolio-info .preview-link,
-.portfolio-info .details-link {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    border-radius: 50%;
-    margin: 0 5px;
-    transition: all 0.3s ease-in-out;
-    font-size: 1.1rem;
-    opacity: 0; /* Awalnya tersembunyi */
-    transform: translateY(20px); /* Posisikan di bawah */
-    animation: fadeUp 0.6s forwards; /* Animasi muncul dari bawah */
-    animation-delay: 0.2s; /* Sedikit delay setelah overlay muncul */
-}
-
-.portfolio-info .details-link {
-    animation-delay: 0.3s; /* Delay sedikit lebih lama untuk link detail */
-}
-
-.portfolio-content:hover .portfolio-info .preview-link,
-.portfolio-content:hover .portfolio-info .details-link {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-.portfolio-info .preview-link:hover,
-.portfolio-info .details-link:hover {
-    background: var(--accent-color, #007bff);
-}
-
-/* Re-use keyframes from project section */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    #portfolio {
+        background-color: #f8f9fa; /* Warna latar belakang yang lembut */
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    #portfolio .card {
+        border: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 10px; /* Menambahkan border-radius untuk kartu */
+        overflow: hidden; /* Penting agar border-radius berfungsi pada gambar */
     }
-}
+
+    #portfolio .card:hover {
+        transform: translateY(-5px); /* Efek angkat saat hover */
+        box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.18) !important; /* Bayangan lebih kuat dan menyebar saat hover */
+    }
+
+    #portfolio .card img {
+        height: 250px; /* Tinggi gambar carousel yang seragam */
+        object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+        /* inherit border-top-left-radius dan border-top-right-radius dari parent card */
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+    }
+
+    #portfolio .card-title {
+        color: #018880; /* Warna judul yang lebih menonjol, disesuaikan dengan tema */
+        font-weight: bold;
+    }
+
+    /* --- MULAI PERBAIKAN TOMBOL "Lihat Detail" PADA KARTU (WARNA #018880) --- */
+    #portfolio .btn-primary {
+        background-color: #018880; /* Warna hijau toska */
+        border-color: #018880;
+        font-weight: 500; /* Sedikit lebih tebal */
+        padding: 8px 20px; /* Padding yang lebih baik */
+        border-radius: 5px; /* Sedikit membulat */
+        transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #portfolio .btn-primary:hover {
+        background-color: #006b60; /* Warna hijau toska yang sedikit lebih gelap saat hover */
+        border-color: #006b60;
+        transform: translateY(-1px); /* Efek angkat ringan */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow ringan saat hover */
+    }
+    /* --- AKHIR PERBAIKAN TOMBOL "Lihat Detail" --- */
+
+
+    /* --- MULAI Kustomisasi Carousel Controls (Panah Navigasi) (WARNA #018880) --- */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(1, 136, 128, 0.6); /* Warna hijau toska transparan */
+        border-radius: 50%;
+        padding: 12px; /* Ukuran padding ikon */
+        width: 40px; /* Ukuran icon */
+        height: 40px; /* Ukuran icon */
+        display: flex; /* Untuk memposisikan icon SVG di tengah */
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .carousel-control-prev:hover .carousel-control-prev-icon,
+    .carousel-control-next:hover .carousel-control-next-icon {
+        background-color: rgba(1, 136, 128, 0.8); /* Lebih gelap saat hover */
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        width: 15%; /* Mengurangi lebar area klik panah agar tidak terlalu mengganggu */
+    }
+    /* --- AKHIR Kustomisasi Carousel Controls --- */
+
+    /* Kustomisasi Modal */
+    .modal-content {
+        border-radius: 10px;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Shadow pada modal */
+    }
+
+    .modal-header {
+        border-bottom: none;
+        padding-bottom: 0; /* Mengurangi padding bawah header */
+    }
+
+    .modal-title {
+        color: #333; /* Warna judul modal */
+        font-weight: 600;
+    }
+
+    .modal-body img {
+        max-height: 450px; /* Tinggi gambar di modal */
+        object-fit: contain; /* Gambar akan menyesuaikan tanpa terpotong */
+        border-radius: 5px; /* Sedikit rounded pada gambar modal */
+    }
+
+    /* --- MULAI PERBAIKAN TOMBOL TUTUP MODAL (WARNA #018880) --- */
+    .modal-footer .btn-secondary {
+        background-color: #018880; /* Warna hijau toska */
+        border-color: #018880;
+        font-weight: 500;
+        padding: 8px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .modal-footer .btn-secondary:hover {
+        background-color: #006b60; /* Warna hijau toska lebih gelap saat hover */
+        border-color: #006b60;
+        transform: translateY(-1px); /* Efek angkat ringan */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow ringan saat hover */
+    }
+    /* --- AKHIR PERBAIKAN TOMBOL TUTUP MODAL --- */
 </style>
-
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    // --- Inisialisasi Isotope untuk Portfolio Filtering ---
-    let portfolioContainer = document.querySelector('.isotope-container');
-    if (portfolioContainer) {
-        let portfolioIsotope = new Isotope(portfolioContainer, {
-            itemSelector: '.isotope-item',
-            layoutMode: 'fitRows' // Anda bisa mencoba 'masonry' jika ingin tata letak yang lebih fleksibel
+    document.addEventListener("DOMContentLoaded", function () {
+        var carousels = document.querySelectorAll(".carousel");
+        carousels.forEach(function (carousel) {
+            // Ini akan mengatur interval untuk semua carousel secara manual
+            // Ganti 8000 dengan kecepatan yang Anda inginkan dalam milidetik
+            new bootstrap.Carousel(carousel, {
+                interval: 8000,
+            });
         });
 
-        let portfolioFilters = document.querySelectorAll('.portfolio-filters li');
-
-        portfolioFilters.forEach(function(el) {
-            el.addEventListener('click', function() {
-                // Hapus kelas 'filter-active' dari yang aktif sebelumnya
-                document.querySelector('.portfolio-filters .filter-active').classList.remove('filter-active');
-                // Tambahkan kelas 'filter-active' ke yang baru diklik
-                this.classList.add('filter-active');
-
-                // Atur filter Isotope
-                portfolioIsotope.arrange({
-                    filter: this.getAttribute('data-filter')
-                });
-
-                // Opsional: Scroll ke atas container setelah filter diubah (untuk UX yang lebih baik)
-                // portfolioContainer.scrollIntoView({ behavior: 'smooth' });
-            }, false);
+        var portfolioModals = document.querySelectorAll(".modal");
+        portfolioModals.forEach(function (modal) {
+            modal.addEventListener("shown.bs.modal", function () {
+                var modalCarousel = this.querySelector(".carousel");
+                if (modalCarousel) {
+                    var bsCarousel =
+                        bootstrap.Carousel.getInstance(modalCarousel);
+                    if (bsCarousel) {
+                        bsCarousel.to(0);
+                    }
+                }
+            });
         });
-    }
-
-    // --- Inisialisasi GLightbox untuk Image Pop-up ---
-    const glightbox = GLightbox({
-        selector: '.glightbox' // Memilih semua elemen dengan kelas 'glightbox'
     });
-
-    // --- Optional: Inisialisasi AOS (Animate On Scroll) jika Anda menggunakannya ---
-    // Pastikan Anda juga memiliki library AOS di-include di proyek Anda.
-    AOS.init({
-        duration: 800, // Durasi animasi dalam ms
-        easing: 'ease-in-out', // Jenis easing
-        once: true, // Animasi hanya berjalan sekali
-        mirror: false // Tidak mengulang animasi saat scroll ke atas/bawah
-    });
-});
 </script>

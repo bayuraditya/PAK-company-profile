@@ -11,11 +11,11 @@
                             >
                                 <h2>Design For Living</h2>
                                 <p>
-                                     Memberikan jasa konstruksi
- berpengalaman yang mengutamakan keseragaman kehidupan
- dengan sentuhan artistik yang mengikuti perkembangan teknologi
- dan modernisasi untuk menyajikan hasil konstruksi yang harmonis
- dengan kehidupan bagi Klien    
+                                    Memberikan jasa konstruksi
+                                    berpengalaman yang mengutamakan keseragaman kehidupan
+                                    dengan sentuhan artistik yang mengikuti perkembangan teknologi
+                                    dan modernisasi untuk menyajikan hasil konstruksi yang harmonis
+                                    dengan kehidupan bagi Klien    
                                 </p>
                                 <div class="hero-btns">
                                     <a

@@ -47,137 +47,78 @@
                         <div
                             class="swiper-wrapper d-flex justify-content-center"
                         >
+                        @php
+                        // Path gambar fallback default jika gambar tidak ditemukan atau rusak
+                        $defaultImagePath = 'assets/img/person/person-m-8.webp'; 
+
+                        // Data dummy anggota tim
+                        $teamMembers = [
+                              [
+                                'name' => 'Samsuri',
+                                'position' => 'Komisaris',
+                                'image' => 'images/team/samsuri.png',
+                                'description' => 'Pengawas dan penasihat strategis perusahaan, memastikan tata kelola yang baik.',
+                                'social_email' => '#',
+                                'social_instagram' => '#',
+                                'social_linkedin' => '#',
+                                'social_whatsapp' => '#',
+                            ],
+                            [
+                                'name' => 'Marta Tobing',
+                                'position' => 'Executive Admin',
+                                'image' => 'images/team/marta tobing.png',
+                                'description' => 'Mendukung operasional harian dengan efisiensi tinggi dan koordinasi yang rapi.',
+                                'social_email' => '#',
+                                'social_instagram' => '#',
+                                'social_linkedin' => '#',
+                                'social_whatsapp' => '#',
+                            ],
+                            [
+                                'name' => 'Supandi',
+                                'position' => 'Direktur',
+                                'image' => 'images/team/supandi.png',
+                                'description' => 'Berpengalaman lebih dari 20 tahun di industri, memimpin dengan visi dan inovasi.',
+                                'social_email' => '#',
+                                'social_instagram' => '#',
+                                'social_linkedin' => '#',
+                                'social_whatsapp' => '#',
+                            ],
+                          
+                          
+                         
+                        ];
+                    @endphp
+                            @foreach($teamMembers as $member)
                             <div class="swiper-slide">
                                 <div class="team-card">
                                     <div class="team-image">
                                         <img
-                                            src="assets/img/person/person-m-3.webp"
+                                            src="{{$member['image']}}"
                                             class="img-fluid"
                                             alt=""
                                             loading="lazy"
                                         />
                                         <div class="team-overlay">
-                                            <div class="social-links">
-                                                <a href="#"
-                                                    ><i
-                                                        class="bi bi-twitter-x"
-                                                    ></i
-                                                ></a>
-                                                <a href="#"
-                                                    ><i
-                                                        class="bi bi-facebook"
-                                                    ></i
-                                                ></a>
-                                                <a href="#"
-                                                    ><i
-                                                        class="bi bi-instagram"
-                                                    ></i
-                                                ></a>
-                                                <a href="#"
-                                                    ><i
-                                                        class="bi bi-linkedin"
-                                                    ></i
-                                                ></a>
-                                            </div>
+                                           <div class="social-links">
+                                            <a href="{{ $member['social_email'] }}"><i class="bi bi-envelope-fill"></i></a>
+                                            <a href="{{ $member['social_instagram'] }}"><i class="bi bi-instagram"></i></a>
+                                            <a href="{{ $member['social_linkedin'] }}"><i class="bi bi-linkedin"></i></a>
+                                            <a href="{{ $member['social_whatsapp'] }}"><i class="bi bi-whatsapp"></i></a>
+                                        </div>
+
                                         </div>
                                     </div>
                                     <div class="team-content">
-                                        <h3>Supandi</h3>
-                                        <span>Direktur</span>
+                                        <h3>{{$member['name']}}</h3>
+                                        <span>{{$member['position']}}</span>
                                         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p> -->
                                     </div>
                                 </div>
                                 <!-- End Team Card -->
                             </div>
                             <!-- End slide item -->
+                            @endforeach
 
-                            <div class="swiper-slide">
-                                <div class="team-card">
-                                    <div class="team-image">
-                                        <img
-                                            src="assets/img/person/person-f-5.webp"
-                                            class="img-fluid"
-                                            alt=""
-                                            loading="lazy"
-                                        />
-                                        <div class="team-overlay">
-                                            <div class="social-links">
-                                                <a href="#"
-                                                    ><i
-                                                        class="bi bi-twitter-x"
-                                                    ></i
-                                                ></a>
-                                                <a href="#"
-                                                    ><i
-                                                        class="bi bi-facebook"
-                                                    ></i
-                                                ></a>
-                                                <a href="#"
-                                                    ><i
-                                                        class="bi bi-instagram"
-                                                    ></i
-                                                ></a>
-                                                <a href="#"
-                                                    ><i
-                                                        class="bi bi-linkedin"
-                                                    ></i
-                                                ></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="team-content">
-                                        <h3>Samsuri</h3>
-                                        <span>Komisaris</span>
-                                        <!-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> -->
-                                    </div>
-                                </div>
-                                <!-- End Team Card -->
-                            </div>
-                            <!-- End slide item -->
-
-                            <div class="swiper-slide">
-                                <div class="team-card">
-                                    <div class="team-image">
-                                        <img
-                                            src="assets/img/person/person-m-8.webp"
-                                            class="img-fluid"
-                                            alt=""
-                                            loading="lazy"
-                                        />
-                                        <div class="team-overlay">
-                                            <div class="social-links">
-                                                <a href="#"
-                                                    ><i
-                                                        class="bi bi-twitter-x"
-                                                    ></i
-                                                ></a>
-                                                <a href="#"
-                                                    ><i
-                                                        class="bi bi-facebook"
-                                                    ></i
-                                                ></a>
-                                                <a href="#"
-                                                    ><i
-                                                        class="bi bi-instagram"
-                                                    ></i
-                                                ></a>
-                                                <a href="#"
-                                                    ><i
-                                                        class="bi bi-linkedin"
-                                                    ></i
-                                                ></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="team-content">
-                                        <h3>Marta Tobing</h3>
-                                        <span>Executive Admin</span>
-                                        <!-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
-                                    </div>
-                                </div>
-                                <!-- End Team Card -->
-                            </div>
-                            <!-- End slide item -->
                         </div>
                         <div class="swiper-pagination"></div>
                         <div class="swiper-button-prev"></div>

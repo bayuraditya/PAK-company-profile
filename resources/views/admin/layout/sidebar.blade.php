@@ -33,6 +33,13 @@
           </a>
         </li>
 
+        <li class="sidebar-item {{ request()->routeIs('admin.portfolio.*') ? 'active' : '' }}">
+          <a href="{{ route('admin.portfolio.index') }}" class="sidebar-link">
+            <i class="bi bi-kanban-fill"></i>
+            <span>Portfolio</span>
+          </a>
+        </li>
+
         <li class="sidebar-item {{ request()->routeIs('admin.team.*') ? 'active' : '' }}">
           <a href="{{ route('admin.team.index') }}" class="sidebar-link">
             <i class="bi bi-people-fill"></i>

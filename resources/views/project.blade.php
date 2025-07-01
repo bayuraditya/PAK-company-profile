@@ -13,6 +13,7 @@
                 $projectsData = [
                     [
                         'title' => 'VILLAS - Villa Wantilan Nusa Dua',
+                        'slug' => 'VILLAS-Villa-Wantilan-Nusa-Dua',
                         'category' => 'Renovasi Villa & Landscape',
                         'image' => 'images/projects/villa-nusa-dua (2).jpeg', // Sesuaikan path jika perlu
                         'description' => 'Perombakan total Villa Wantilan Nusa Dua, meliputi 3 bangunan kamar tidur terpisah beserta penataan landscape sekitarnya. Proyek ini mencakup pekerjaan Sipil, Interior, dan MEP.',
@@ -20,20 +21,23 @@
                     ],
                     [
                         'title' => 'CLUB HOUSE - Golf Course Nusa Dua',
+                        'slug' => 'CLUB-HOUSE-Golf-Course-Nusa-Dua',
                         'category' => 'Renovasi Fasilitas Rekreasi',
-                        'image' => 'images/projects/villa-nusa-dua (2).jpeg', // Sesuaikan path jika perlu
+                        'image' => 'images/projects/club-house-golf-course-nusa-dua (4).jpeg', // Sesuaikan path jika perlu
                         'description' => 'Perombakan total Club House Golf Course di Nusa Dua untuk meningkatkan fasilitas dan estetika. Lingkup pekerjaan meliputi Sipil, Interior, dan MEP.',
                         'aos_delay' => '200'
                     ],
                     [
                         'title' => 'OFFICE - Back Office Golf Course',
+                        'slug' => 'OFFICE-Back-Office-Golf-Course',
                         'category' => 'Renovasi Kantor & Komersial',
-                        'image' => 'images/projects/villa-nusa-dua (2).jpeg', // Sesuaikan path jika perlu
+                        'image' => 'images/projects/back-office-nusa-dua (2).jpeg', // Sesuaikan path jika perlu
                         'description' => 'Perombakan total Back Office Golf Course di Nusa Dua, menciptakan ruang kerja yang lebih modern dan fungsional. Proyek ini mencakup aspek Sipil, Interior, dan MEP.',
                         'aos_delay' => '300'
                     ],
                     [
                         'title' => 'SUPER STORE & OFFICE - Sunset Road',
+                        'slug' => 'SUPER-STORE-&-OFFICE-Sunset-Road',
                         'category' => 'Pembangunan Retail & Komersial',
                         'image' => 'images/projects/villa-nusa-dua (2).jpeg', // Sesuaikan path jika perlu
                         'description' => 'Pembangunan Superstore dan Kantor di kawasan strategis Sunset Road, dirancang untuk efisiensi operasional dan kenyamanan pengunjung. Meliputi pekerjaan Sipil, Interior, dan MEP.',
@@ -41,6 +45,7 @@
                     ],
                     [
                         'title' => 'RESIDENCE - Rumah Tinggal Modern',
+                        'slug' => 'RESIDENCE-Rumah-Tinggal-Modern',
                         'category' => 'Pembangunan Rumah Hunian',
                         'image' => 'images/projects/villa-nusa-dua (2).jpeg', // Sesuaikan path jika perlu
                         'description' => 'Pembangunan unit rumah tinggal yang didesain secara modern dan fungsional, memenuhi kebutuhan hunian berkualitas tinggi. Proyek ini mencakup Sipil, Interior, dan MEP.',
@@ -48,6 +53,7 @@
                     ],
                     [
                         'title' => 'FACILITY MAINTENANCE - Proyek Berkelanjutan',
+                        'slug' => 'FACILITY-MAINTENANCE-Proyek-Berkelanjutan',
                         'category' => 'Pemeliharaan Fasilitas',
                         'image' => 'images/projects/villa-nusa-dua (2).jpeg', // Sesuaikan path jika perlu
                         'description' => 'Layanan pemeliharaan fasilitas berkelanjutan untuk memastikan semua infrastruktur dan bangunan berfungsi optimal serta terjaga kualitasnya. Mencakup perawatan Sipil, Interior, dan MEP.',
@@ -66,7 +72,7 @@
                             alt="{{ $project['title'] }}"
                         />
                         <div class="project-overlay">
-                            <a href="#" title="Lihat Detail Proyek" class="details-link-overlay">
+                            <a href="/project/{{$project['slug']}}" title="Lihat Detail Proyek" class="details-link-overlay">
                                 <i class="bi bi-link-45deg"></i> Lihat Detail
                             </a>
                         </div>
@@ -83,7 +89,7 @@
 
         </div>
         <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="700">
-            <a href="#" class="btn-get-started">Lihat Semua Proyek</a>
+            <a href="/project" class="btn-get-started">Lihat Semua Proyek</a>
         </div>
     </div>
 </section>
