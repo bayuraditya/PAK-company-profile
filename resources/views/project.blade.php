@@ -8,69 +8,18 @@
     </div>
     <div class="container">
         <div class="row gy-4">
-            {{-- Data Dummy Project (akan diganti dengan data compact dari Controller) --}}
-            @php
-                $projectsData = [
-                    [
-                        'title' => 'VILLAS - Villa Wantilan Nusa Dua',
-                        'slug' => 'VILLAS-Villa-Wantilan-Nusa-Dua',
-                        'category' => 'Renovasi Villa & Landscape',
-                        'image' => 'images/projects/villa-nusa-dua (2).jpeg', // Sesuaikan path jika perlu
-                        'description' => 'Perombakan total Villa Wantilan Nusa Dua, meliputi 3 bangunan kamar tidur terpisah beserta penataan landscape sekitarnya. Proyek ini mencakup pekerjaan Sipil, Interior, dan MEP.',
-                        'aos_delay' => '100'
-                    ],
-                    [
-                        'title' => 'CLUB HOUSE - Golf Course Nusa Dua',
-                        'slug' => 'CLUB-HOUSE-Golf-Course-Nusa-Dua',
-                        'category' => 'Renovasi Fasilitas Rekreasi',
-                        'image' => 'images/projects/club-house-golf-course-nusa-dua (4).jpeg', // Sesuaikan path jika perlu
-                        'description' => 'Perombakan total Club House Golf Course di Nusa Dua untuk meningkatkan fasilitas dan estetika. Lingkup pekerjaan meliputi Sipil, Interior, dan MEP.',
-                        'aos_delay' => '200'
-                    ],
-                    [
-                        'title' => 'OFFICE - Back Office Golf Course',
-                        'slug' => 'OFFICE-Back-Office-Golf-Course',
-                        'category' => 'Renovasi Kantor & Komersial',
-                        'image' => 'images/projects/back-office-nusa-dua (2).jpeg', // Sesuaikan path jika perlu
-                        'description' => 'Perombakan total Back Office Golf Course di Nusa Dua, menciptakan ruang kerja yang lebih modern dan fungsional. Proyek ini mencakup aspek Sipil, Interior, dan MEP.',
-                        'aos_delay' => '300'
-                    ],
-                    [
-                        'title' => 'SUPER STORE & OFFICE - Sunset Road',
-                        'slug' => 'SUPER-STORE-&-OFFICE-Sunset-Road',
-                        'category' => 'Pembangunan Retail & Komersial',
-                        'image' => 'images/projects/villa-nusa-dua (2).jpeg', // Sesuaikan path jika perlu
-                        'description' => 'Pembangunan Superstore dan Kantor di kawasan strategis Sunset Road, dirancang untuk efisiensi operasional dan kenyamanan pengunjung. Meliputi pekerjaan Sipil, Interior, dan MEP.',
-                        'aos_delay' => '400'
-                    ],
-                    [
-                        'title' => 'RESIDENCE - Rumah Tinggal Modern',
-                        'slug' => 'RESIDENCE-Rumah-Tinggal-Modern',
-                        'category' => 'Pembangunan Rumah Hunian',
-                        'image' => 'images/projects/villa-nusa-dua (2).jpeg', // Sesuaikan path jika perlu
-                        'description' => 'Pembangunan unit rumah tinggal yang didesain secara modern dan fungsional, memenuhi kebutuhan hunian berkualitas tinggi. Proyek ini mencakup Sipil, Interior, dan MEP.',
-                        'aos_delay' => '500'
-                    ],
-                    [
-                        'title' => 'FACILITY MAINTENANCE - Proyek Berkelanjutan',
-                        'slug' => 'FACILITY-MAINTENANCE-Proyek-Berkelanjutan',
-                        'category' => 'Pemeliharaan Fasilitas',
-                        'image' => 'images/projects/villa-nusa-dua (2).jpeg', // Sesuaikan path jika perlu
-                        'description' => 'Layanan pemeliharaan fasilitas berkelanjutan untuk memastikan semua infrastruktur dan bangunan berfungsi optimal serta terjaga kualitasnya. Mencakup perawatan Sipil, Interior, dan MEP.',
-                        'aos_delay' => '600'
-                    ],
-                ];
-            @endphp
+          
 
-            @foreach ($projectsData as $index => $project)
+            @foreach ($projects as $project)
+            
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ $project['aos_delay'] }}">
                 <div class="project-item">
                     <div class="project-img-container">
-                        <img
-                            src="{{ asset($project['image']) }}"
-                            class="img-fluid"
-                            alt="{{ $project['title'] }}"
-                        />
+                        <img src="{{ $project->projectImages->isNotEmpty() 
+                            ? asset($project->projectImages->first()->path) 
+                            : 'https://plus.unsplash.com/premium_photo-1681691912442-68c4179c530c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}"
+                            alt="{{ $project->name }}">
+
                         <div class="project-overlay">
                             <a href="/project/{{$project['slug']}}" title="Lihat Detail Proyek" class="details-link-overlay">
                                 <i class="bi bi-link-45deg"></i> Lihat Detail
@@ -78,14 +27,13 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h4>{{ $project['title'] }}</h4>
+                        <h5>{{ $project['name'] }}</h5>
                         <p class="project-category">{{ $project['category'] }}</p>
                         <p>{{ $project['description'] }}</p>
                     </div>
                 </div>
             </div>
             @endforeach
-            {{-- End Looping Project Items --}}
 
         </div>
         <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="700">

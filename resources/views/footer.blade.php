@@ -5,7 +5,7 @@
             <!-- Logo -->
             <div class="col-lg-3 col-md-6 d-flex justify-content-center justify-content-md-start">
                 <div class="address text-center text-md-start">
-                    <img src="images/logo pak hitam no bg.png" alt="Logo" style="width: 130px;" />
+                    <img src="{{ asset('images/logo pak hitam no bg.png') }}" alt="Logo" style="width: 130px;" />
                 </div>
             </div>
 
@@ -16,9 +16,9 @@
                     <h4>Contact</h4>
                     <p>
                         <strong>Phone:</strong>
-                        <span>+62 853 3805 3331</span><br />
+                        <span>{{ $contact->whatsapp ?? '-' }}</span><br />
                         <strong>Email:</strong>
-                        <span>pendiabadikarya@gmail.com</span><br />
+                        <span>{{ $contact->email ?? '-' }}</span><br />
                     </p>
                 </div>
             </div>
@@ -39,10 +39,10 @@
             <div class="col-lg-3 col-md-6">
                 <h4>Follow Us</h4>
                 <div class="social-links d-flex justify-content-center justify-content-md-start">
-                    <a href="#" class="email"><i class="bi bi-envelope"></i></a>
-                    <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
-                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    <a href="mailto:{{ $contact->email ?? '#' }}"><i class="bi bi-envelope"></i></a>
+                    <a href="https://wa.me/{{ preg_replace('/\D/', '', $contact->whatsapp ?? '') }}"><i class="bi bi-whatsapp"></i></a>
+                    <a href="{{ $contact->instagram ?? '#' }}" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="{{ $contact->linkedin ?? '#' }}" target="_blank"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
 

@@ -47,53 +47,13 @@
                         <div
                             class="swiper-wrapper d-flex justify-content-center"
                         >
-                        @php
-                        // Path gambar fallback default jika gambar tidak ditemukan atau rusak
-                        $defaultImagePath = 'assets/img/person/person-m-8.webp'; 
-
-                        // Data dummy anggota tim
-                        $teamMembers = [
-                              [
-                                'name' => 'Samsuri',
-                                'position' => 'Komisaris',
-                                'image' => 'images/team/samsuri.png',
-                                'description' => 'Pengawas dan penasihat strategis perusahaan, memastikan tata kelola yang baik.',
-                                'social_email' => '#',
-                                'social_instagram' => '#',
-                                'social_linkedin' => '#',
-                                'social_whatsapp' => '#',
-                            ],
-                            [
-                                'name' => 'Marta Tobing',
-                                'position' => 'Executive Admin',
-                                'image' => 'images/team/marta tobing.png',
-                                'description' => 'Mendukung operasional harian dengan efisiensi tinggi dan koordinasi yang rapi.',
-                                'social_email' => '#',
-                                'social_instagram' => '#',
-                                'social_linkedin' => '#',
-                                'social_whatsapp' => '#',
-                            ],
-                            [
-                                'name' => 'Supandi',
-                                'position' => 'Direktur',
-                                'image' => 'images/team/supandi.png',
-                                'description' => 'Berpengalaman lebih dari 20 tahun di industri, memimpin dengan visi dan inovasi.',
-                                'social_email' => '#',
-                                'social_instagram' => '#',
-                                'social_linkedin' => '#',
-                                'social_whatsapp' => '#',
-                            ],
-                          
-                          
-                         
-                        ];
-                    @endphp
-                            @foreach($teamMembers as $member)
+                     
+                            @foreach($teams as $member)
                             <div class="swiper-slide">
                                 <div class="team-card">
                                     <div class="team-image">
                                         <img
-                                            src="{{$member['image']}}"
+                                            src="{{ asset($member['image_path'] ?? 'images/default-project.jpg') }}"
                                             class="img-fluid"
                                             alt=""
                                             loading="lazy"

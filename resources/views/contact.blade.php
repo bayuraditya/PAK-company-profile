@@ -27,7 +27,7 @@
                                             <i class="bi bi-envelope"></i>
                                             <div>
                                                 <h4>Email:</h4>
-                                                <p>pendiabadikarya@gmail.com</p>
+                                                <p>{{$contact->email}}</p>
                                             </div>
                                         </div>
 
@@ -35,7 +35,8 @@
                                             <i class="bi bi-telephone"></i>
                                             <div>
                                                 <h4>Phone:</h4>
-                                                <p>+62 853 3805 3331</p>
+                                                <p>{{$contact->whatsapp}}</p>
+
                                             </div>
                                         </div>
 
@@ -44,28 +45,21 @@
                                             <div>
                                                 <h4>Address:</h4>
                                                 <p>
-                                                    Jln. Gigit Sari No.3
-                                                    Jimbaran, Bali, Indonesia
+                                                    {{$contact->address}}
                                                 </p>
                                                 <!-- <p>Wordsmith City, NY 10001</p> -->
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="social-links">
-                                        <a href="#"
-                                            ><i class="bi bi-envelope"></i
-                                        ></a>
-                                        <a href="#"
-                                            ><i class="bi bi-whatsapp"></i
-                                        ></a>
-                                        <a href="#"
-                                            ><i class="bi bi-instagram"></i
-                                        ></a>
-                                        <a href="#"
-                                            ><i class="bi bi-linkedin"></i
-                                        ></a>
-                                    </div>
+                                 <div class="social-links">
+                                    <a href="mailto:{{ $contact->email ?? '#' }}"><i class="bi bi-envelope"></i></a>
+                                    <a href="https://wa.me/{{ preg_replace('/\D/', '', $contact->whatsapp ?? '') }}"><i class="bi bi-whatsapp"></i></a>
+                                    <a href="{{ $contact->instagram ?? '#' }}" target="_blank"><i class="bi bi-instagram"></i></a>
+                                    <a href="{{ $contact->linkedin ?? '#' }}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                </div>
+
+
                                 </div>
                             </div>
                         </div>

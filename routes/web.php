@@ -7,7 +7,6 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GuestController;
-use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 
@@ -57,6 +56,16 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         Route::delete('/{team}', [TeamController::class, 'destroy'])->name('destroy');
     });
 
+    // Contact CRUD
+    Route::name('contact.')->prefix('user')->group(function () {
+        Route::get('/', [ContactController::class, 'index'])->name('index');
+        Route::get('/create', [ContactController::class, 'create'])->name('create');
+        Route::post('/', [ContactController::class, 'store'])->name('store');
+        Route::get('/{user}', [ContactController::class, 'show'])->name('show');
+        Route::get('/{user}/edit', [ContactController::class, 'edit'])->name('edit');
+        Route::put('/{user}', [ContactController::class, 'update'])->name('update');
+        Route::delete('/{user}', [ContactController::class, 'destroy'])->name('destroy');
+    });
     // User CRUD
     Route::name('user.')->prefix('user')->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('index');

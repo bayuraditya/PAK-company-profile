@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('category');
-            $table->string('client');
-            $table->year('year');
+            $table->string('category')->nullable();
+            $table->string('client')->nullable();
+            $table->year('year')->nullable();
             $table->decimal('budget', 15, 2)->nullable();
-            $table->string('location');
+            $table->string('location')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });

@@ -28,9 +28,9 @@
                         <div class="project-item">
                             <div class="project-img-container">
                                 <img
-                                    src="{{ asset($project['image']) }}"
+                                    src="{{ asset(optional($project->projectImages->first())->path ?? 'https://plus.unsplash.com/premium_photo-1681691912442-68c4179c530c?q=80&w=2071&auto=format&fit=crop') }}"
                                     class="img-fluid"
-                                    alt="{{ $project['title'] }}"
+                                    alt="{{ $project['name'] }}"
                                 />
                                 <div class="project-overlay">
                                     {{-- Anda bisa arahkan ke halaman detail proyek tunggal jika ada --}}
@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                             <div class="project-info">
-                                <h4>{{ $project['title'] }}</h4>
+                                <h4>{{ $project['name'] }}</h4>
                                 <p class="project-category">{{ $project['category'] }}</p>
                                 <p>{{ $project['description'] }}</p>
                             </div>
@@ -51,13 +51,18 @@
                         <p class="text-center">Belum ada proyek yang tersedia.</p>
                     </div>
                     @endforelse
+                   
+
                 </div>
             </div>
+
         </section>
         </main>
+        
 @endsection
 
 @push('styles')
+
     {{-- Anda mungkin perlu menambahkan kembali style untuk project-item di sini, atau pastikan sudah terload dari global CSS --}}
     <style>
         /* Mengulang atau memastikan gaya untuk kartu proyek dari halaman utama */

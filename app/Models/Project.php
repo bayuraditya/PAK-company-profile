@@ -22,7 +22,7 @@ class Project extends Model
         'description',
     ];
 
-    public function images()
+    public function projectImages()
     {
         return $this->hasMany(ProjectImage::class);
     }

@@ -10,167 +10,27 @@
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row gx-2 gy-2 portfolio-container"> {{-- gx dan gy dipersempit --}}
       {{-- Galeri Item --}}
+      @foreach($galleries as $gallery)
       <div class="col-lg-4 col-md-6 portfolio-item">
         <div class="portfolio-wrap">
           <img
-            src="{{ asset('images/villa-nusa-dua.jpeg') }}"
+            src="{{ asset($gallery->path ?? 'images/default-project.jpg') }}"
             class="img-fluid"
-            alt="Villa Nusa Dua"
+            alt="{{ $gallery->name ?? 'Project Image' }}"
           />
           <div class="portfolio-info">
             <div class="portfolio-links d-flex justify-content-center align-items-center h-100">
               <a
-                href="{{ asset('images/villa-nusa-dua.jpeg') }}"
+                href="{{ asset($gallery->path ?? 'images/default-project.jpg') }}"
                 data-gallery="portfolioGallery"
                 class="portfolio-lightbox"
-                title="Villa Nusa Dua"
+                title="{{ $gallery->project->name ?? 'Project Image' }}"
               ><i class="bi bi-plus"></i></a>
             </div>
           </div>
         </div>
       </div>
-      {{-- Galeri Item --}}
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img
-            src="{{ asset('images/villa-nusa-dua.jpeg') }}"
-            class="img-fluid"
-            alt="Villa Nusa Dua"
-          />
-          <div class="portfolio-info">
-            <div class="portfolio-links d-flex justify-content-center align-items-center h-100">
-              <a
-                href="{{ asset('images/villa-nusa-dua.jpeg') }}"
-                data-gallery="portfolioGallery"
-                class="portfolio-lightbox"
-                title="Villa Nusa Dua"
-              ><i class="bi bi-plus"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {{-- Galeri Item --}}
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img
-            src="{{ asset('images/villa-nusa-dua.jpeg') }}"
-            class="img-fluid"
-            alt="Villa Nusa Dua"
-          />
-          <div class="portfolio-info">
-            <div class="portfolio-links d-flex justify-content-center align-items-center h-100">
-              <a
-                href="{{ asset('images/villa-nusa-dua.jpeg') }}"
-                data-gallery="portfolioGallery"
-                class="portfolio-lightbox"
-                title="Villa Nusa Dua"
-              ><i class="bi bi-plus"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {{-- Galeri Item --}}
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img
-            src="{{ asset('images/villa-nusa-dua.jpeg') }}"
-            class="img-fluid"
-            alt="Villa Nusa Dua"
-          />
-          <div class="portfolio-info">
-            <div class="portfolio-links d-flex justify-content-center align-items-center h-100">
-              <a
-                href="{{ asset('images/villa-nusa-dua.jpeg') }}"
-                data-gallery="portfolioGallery"
-                class="portfolio-lightbox"
-                title="Villa Nusa Dua"
-              ><i class="bi bi-plus"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {{-- Galeri Item --}}
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img
-            src="{{ asset('images/villa-nusa-dua.jpeg') }}"
-            class="img-fluid"
-            alt="Villa Nusa Dua"
-          />
-          <div class="portfolio-info">
-            <div class="portfolio-links d-flex justify-content-center align-items-center h-100">
-              <a
-                href="{{ asset('images/villa-nusa-dua.jpeg') }}"
-                data-gallery="portfolioGallery"
-                class="portfolio-lightbox"
-                title="Villa Nusa Dua"
-              ><i class="bi bi-plus"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {{-- Galeri Item --}}
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img
-            src="{{ asset('images/villa-nusa-dua.jpeg') }}"
-            class="img-fluid"
-            alt="Villa Nusa Dua"
-          />
-          <div class="portfolio-info">
-            <div class="portfolio-links d-flex justify-content-center align-items-center h-100">
-              <a
-                href="{{ asset('images/villa-nusa-dua.jpeg') }}"
-                data-gallery="portfolioGallery"
-                class="portfolio-lightbox"
-                title="Villa Nusa Dua"
-              ><i class="bi bi-plus"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {{-- Galeri Item --}}
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img
-            src="{{ asset('images/villa-nusa-dua.jpeg') }}"
-            class="img-fluid"
-            alt="Villa Nusa Dua"
-          />
-          <div class="portfolio-info">
-            <div class="portfolio-links d-flex justify-content-center align-items-center h-100">
-              <a
-                href="{{ asset('images/villa-nusa-dua.jpeg') }}"
-                data-gallery="portfolioGallery"
-                class="portfolio-lightbox"
-                title="Villa Nusa Dua"
-              ><i class="bi bi-plus"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {{-- Galeri Item --}}
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img
-            src="{{ asset('images/villa-nusa-dua.jpeg') }}"
-            class="img-fluid"
-            alt="Villa Nusa Dua"
-          />
-          <div class="portfolio-info">
-            <div class="portfolio-links d-flex justify-content-center align-items-center h-100">
-              <a
-                href="{{ asset('images/villa-nusa-dua.jpeg') }}"
-                data-gallery="portfolioGallery"
-                class="portfolio-lightbox"
-                title="Villa Nusa Dua"
-              ><i class="bi bi-plus"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {{-- Ulangi struktur ini sesuai kebutuhan --}}
+      @endforeach
     </div>
       <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="700">
             <a href="/project" class="btn-get-started">Lihat Semua Proyek</a>
