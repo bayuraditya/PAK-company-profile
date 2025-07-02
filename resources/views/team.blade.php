@@ -53,10 +53,11 @@
                                 <div class="team-card">
                                     <div class="team-image">
                                         <img
-                                            src="{{ asset($member['image_path'] ?? 'images/default-project.jpg') }}"
+                                            src="{{ asset($member['image_path'] ?? 'assets/img/person/person-m-3.webp') }}"
                                             class="img-fluid"
                                             alt=""
                                             loading="lazy"
+                                            style="width: 300px; height: 300px; object-fit: cover;"
                                         />
                                         <div class="team-overlay">
                                            <div class="social-links">

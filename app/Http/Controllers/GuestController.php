@@ -11,9 +11,9 @@ use Illuminate\Http\Request;
 class GuestController extends Controller
 {
     public function index(){
-        $projects = Project::with('projectImages')->take(8)->get();
+        $projects = Project::with('projectImages')->take(6)->get();
         // dd($projects[0]->projectImages[0]->path);
-        $galleries = ProjectImage::with('project')->take(10)->get();
+        $galleries = ProjectImage::with('project')->take(9)->get();
         $teams = Team::get();
         $contact = Contact::firstOrFail();
         return view('welcome',compact('projects','galleries','teams','contact'));

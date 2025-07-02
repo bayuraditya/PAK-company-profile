@@ -2,14 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Project;
+use App\Models\Team;
+use App\Models\Contact;
+use App\Models\User;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        // $admins = User::where('role', 'admin')->get(); // filter khusus admin
-        $admins = 2 ;// filter khusus admin
-        return view('admin.index', compact('admins'));
+        $totalProjects = Project::count();
+        $totalTeams = Team::count();
+        $totalUsers = User::count();
+        $totalContacts = Contact::count();
+
+        return view('admin.index', compact(
+            'totalProjects',
+            'totalTeams',
+            'totalUsers',
+            'totalContacts'
+        ));
     }
 }

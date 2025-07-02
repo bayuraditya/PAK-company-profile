@@ -10,12 +10,9 @@ use App\Http\Controllers\GuestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', [GuestController::class, 'index'])->name('home')->middleware('guest');
-// Login Routes (untuk guest)
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login')->middleware('guest');
+
+Route::get('/', [GuestController::class, 'index'])->name('home');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 
 Route::post('/login', [AuthController::class, 'login'])->middleware('guest');
 
@@ -23,10 +20,6 @@ Route::name('project.')->prefix('project')->group(function () {
     Route::get('/', [GuestController::class, 'project'])->name('index');
     Route::get('/{slug}', [GuestController::class, 'showProjectDetail'])->name('show');
 });
-
-
-
-
 
 // Admin Routes (untuk authenticated users)
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
@@ -51,20 +44,17 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/create', [TeamController::class, 'create'])->name('create');
         Route::post('/', [TeamController::class, 'store'])->name('store');
         Route::get('/{team}', [TeamController::class, 'show'])->name('show');
-        Route::get('/{team}/edit', [TeamController::class, 'edit'])->name('edit');
-        Route::put('/{team}', [TeamController::class, 'update'])->name('update');
-        Route::delete('/{team}', [TeamController::class, 'destroy'])->name('destroy');
+        Route::get('/{name}/edit', [TeamController::class, 'edit'])->name('edit');
+        Route::put('/{name}', [TeamController::class, 'update'])->name('update');
+        Route::delete('/{name}', [TeamController::class, 'destroy'])->name('destroy');
     });
 
     // Contact CRUD
-    Route::name('contact.')->prefix('user')->group(function () {
+    Route::name('contact.')->prefix('contact')->group(function () {
         Route::get('/', [ContactController::class, 'index'])->name('index');
-        Route::get('/create', [ContactController::class, 'create'])->name('create');
         Route::post('/', [ContactController::class, 'store'])->name('store');
-        Route::get('/{user}', [ContactController::class, 'show'])->name('show');
-        Route::get('/{user}/edit', [ContactController::class, 'edit'])->name('edit');
-        Route::put('/{user}', [ContactController::class, 'update'])->name('update');
-        Route::delete('/{user}', [ContactController::class, 'destroy'])->name('destroy');
+        Route::get('/edit', [ContactController::class, 'edit'])->name('edit');
+        Route::put('/update', [ContactController::class, 'update'])->name('update');
     });
     // User CRUD
     Route::name('user.')->prefix('user')->group(function () {

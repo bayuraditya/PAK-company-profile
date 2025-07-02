@@ -45,7 +45,12 @@
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
+              @guest
+                  <a class="btn-getstarted" href="{{ route('login') }}">Login</a>
+              @endguest
 
-                <a class="btn-getstarted" href="/login">Login</a>
+              @auth
+                  <a class="btn-getstarted" href="{{ route('admin.index') }}">Dashboard</a>
+              @endauth
             </div>
         </header>

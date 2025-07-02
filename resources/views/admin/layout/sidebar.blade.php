@@ -2,11 +2,12 @@
   <div class="sidebar-wrapper active">
     <div class="sidebar-header position-relative">
       <div class="d-flex justify-content-between align-items-center">
-        <div class="logo">
-          <a href="{{ route('admin.index') }}">
-            <img src="{{ asset('images/logo pak.png') }}" alt="Logo" />
+        <div class="logo d-flex justify-content-center">
+          <a href="{{ route('home') }}">
+            <img src="{{ asset('images/logo pak hitam no bg.png') }}" alt="Logo" style="height:77px;" />
           </a>
         </div>
+
         <div class="sidebar-toggler x">
           <a href="#" class="sidebar-hide d-xl-none d-block">
             <i class="bi bi-x bi-middle"></i>
@@ -17,7 +18,7 @@
 
     <div class="sidebar-menu">
       <ul class="menu">
-        <li class="sidebar-title">Menu</li>
+        <li class="sidebar-title">Menu Utama</li>
 
         <li class="sidebar-item {{ request()->routeIs('admin.index') ? 'active' : '' }}">
           <a href="{{ route('admin.index') }}" class="sidebar-link">
@@ -26,13 +27,14 @@
           </a>
         </li>
 
+        <li class="sidebar-title">Manajemen Konten</li>
+
         <li class="sidebar-item {{ request()->routeIs('admin.project.*') ? 'active' : '' }}">
           <a href="{{ route('admin.project.index') }}" class="sidebar-link">
             <i class="bi bi-kanban-fill"></i>
             <span>Project</span>
           </a>
         </li>
-
 
         <li class="sidebar-item {{ request()->routeIs('admin.team.*') ? 'active' : '' }}">
           <a href="{{ route('admin.team.index') }}" class="sidebar-link">
@@ -48,8 +50,10 @@
           </a>
         </li>
 
-        <li class="sidebar-item {{ request()->routeIs('admin.profile') ? 'active' : '' }}">
-          <a href="{{ route('admin.profile') }}" class="sidebar-link">
+        <li class="sidebar-title">Pengaturan</li>
+
+        <li class="sidebar-item {{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
+          <a href="{{ route('admin.profile.edit') }}" class="sidebar-link">
             <i class="bi bi-person-fill"></i>
             <span>Profile</span>
           </a>

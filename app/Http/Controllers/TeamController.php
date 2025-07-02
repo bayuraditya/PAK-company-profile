@@ -4,35 +4,43 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class TeamController extends Controller
 {
-    // Tampilkan semua tim
     public function index()
     {
         $teams = Team::latest()->get();
-        return view('team.index', compact('teams'));
+        return view('admin.team.index', compact('teams'));
     }
 
-    // Tampilkan form buat tim baru
     public function create()
     {
-        return view('team.create');
+        return view('admin.team.create');
     }
 
-    // Simpan data tim baru
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'position' => 'required|string|max:255',
-            'photo' => 'nullable|image|max:2048',
+            'name'      => 'required|string|max:255',
+            'position'  => 'required|string|max:255',
+            'whatsapp'  => 'nullable|string|max:20',
+            'email'     => 'nullable|email|max:255',
+            'instagram' => 'nullable|string|max:255',
+            'linkedin'  => 'nullable|url|max:255',
+            'image'     => 'nullable|image|max:2048',
         ]);
 
-        $data = $request->only(['name', 'position']);
+        $data = $request->only(['name', 'position', 'whatsapp', 'email', 'instagram', 'linkedin']);
 
-        if ($request->hasFile('photo')) {
-            $data['photo'] = $request->file('photo')->store('team_photos', 'public');
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $timestamp = now()->format('YmdHis');
+            $filename = $timestamp . '_' . Str::slug(pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/team'), $filename);
+
+            $data['image'] = $filename;
+            $data['image_path'] = 'images/team/' . $filename;
         }
 
         Team::create($data);
@@ -40,31 +48,41 @@ class TeamController extends Controller
         return redirect()->route('admin.team.index')->with('success', 'Team member created successfully.');
     }
 
-    // Tampilkan detail tim
-    public function show(Team $team)
+    public function edit($name)
     {
-        return view('team.show', compact('team'));
+        $team = Team::where('name', $name)->firstOrFail();
+        return view('admin.team.edit', compact('team'));
     }
 
-    // Tampilkan form edit tim
-    public function edit(Team $team)
+    public function update(Request $request, $name)
     {
-        return view('team.edit', compact('team'));
-    }
+        $team = Team::where('name', $name)->firstOrFail();
 
-    // Update data tim
-    public function update(Request $request, Team $team)
-    {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'position' => 'required|string|max:255',
-            'photo' => 'nullable|image|max:2048',
+            'name'      => 'required|string|max:255',
+            'position'  => 'required|string|max:255',
+            'whatsapp'  => 'nullable|string|max:20',
+            'email'     => 'nullable|email|max:255',
+            'instagram' => 'nullable|string|max:255',
+            'linkedin'  => 'nullable|url|max:255',
+            'image'     => 'nullable|image|max:2048',
         ]);
 
-        $data = $request->only(['name', 'position']);
+        $data = $request->only(['name', 'position', 'whatsapp', 'email', 'instagram', 'linkedin']);
 
-        if ($request->hasFile('photo')) {
-            $data['photo'] = $request->file('photo')->store('team_photos', 'public');
+        if ($request->hasFile('image')) {
+            // Hapus gambar lama
+            if ($team->image && file_exists(public_path($team->image))) {
+                unlink(public_path($team->image));
+            }
+
+            $image = $request->file('image');
+            $timestamp = now()->format('YmdHis');
+            $filename = $timestamp . '_' . Str::slug(pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/team'), $filename);
+
+            $data['image'] =  $filename;
+            $data['image_path'] = 'images/team/' . $filename;
         }
 
         $team->update($data);
@@ -72,10 +90,16 @@ class TeamController extends Controller
         return redirect()->route('admin.team.index')->with('success', 'Team member updated successfully.');
     }
 
-    // Hapus data tim
-    public function destroy(Team $team)
+    public function destroy($name)
     {
+        $team = Team::where('name', $name)->firstOrFail();
+
+        if ($team->image && file_exists(public_path($team->image))) {
+            unlink(public_path($team->image));
+        }
+
         $team->delete();
+
         return redirect()->route('admin.team.index')->with('success', 'Team member deleted successfully.');
     }
 }

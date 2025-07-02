@@ -12,13 +12,13 @@ class UserController extends Controller
     public function index()
     {
         $users = User::latest()->get();
-        return view('user.index', compact('users'));
+        return view('admin.user.index', compact('users'));
     }
 
     // Form buat user baru
     public function create()
     {
-        return view('user.create');
+        return view('admin.user.create');
     }
 
     // Simpan user baru
@@ -30,11 +30,11 @@ class UserController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
 
-        User::create([
-            'name'     => $request->name,
-            'email'    => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        $user = new User();
+        $user->name     = $request->name;
+        $user->email    = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
 
         return redirect()->route('admin.user.index')->with('success', 'User created successfully.');
     }
@@ -42,34 +42,32 @@ class UserController extends Controller
     // Tampilkan detail user
     public function show(User $user)
     {
-        return view('user.show', compact('user'));
+        return view('admin.user.show', compact('user'));
     }
 
     // Form edit user
     public function edit(User $user)
     {
-        return view('user.edit', compact('user'));
+        return view('admin.user.edit', compact('user'));
     }
 
     // Update user
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'name'  => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email,' . $user->id,
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|email|unique:users,email,' . $user->id,
             'password' => 'nullable|string|min:6|confirmed',
         ]);
 
-        $data = [
-            'name'  => $request->name,
-            'email' => $request->email,
-        ];
+        $user->name  = $request->name;
+        $user->email = $request->email;
 
         if ($request->filled('password')) {
-            $data['password'] = Hash::make($request->password);
+            $user->password = Hash::make($request->password);
         }
 
-        $user->update($data);
+        $user->save();
 
         return redirect()->route('admin.user.index')->with('success', 'User updated successfully.');
     }

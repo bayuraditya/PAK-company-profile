@@ -10,6 +10,9 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
+        if (auth()->check()) {
+            return redirect()->route('admin.index');
+        }  
         return view('auth.login'); // resources/views/auth/login.blade.php
     }
 
