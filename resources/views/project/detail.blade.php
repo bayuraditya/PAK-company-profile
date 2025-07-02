@@ -122,11 +122,13 @@
     }
 
     .project-details .project-details-slider img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-height: 500px; /* batas tinggi maksimum */
+    object-fit: cover; /* agar gambar proporsional */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
+
 
     .swiper-button-prev,
     .swiper-button-next {

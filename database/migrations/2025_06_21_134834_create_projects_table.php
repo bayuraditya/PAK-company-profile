@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('category')->nullable();
             $table->string('client')->nullable();
             $table->year('year')->nullable();
-            $table->decimal('budget', 15, 2)->nullable();
+            $table->string('budget')->nullable();
             $table->string('location')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();

@@ -50,13 +50,7 @@
                                 <td>{{ $project->client ?? '-' }}</td>
                                 <td>{{ $project->category ?? '-' }}</td>
                                 <td>{{ $project->year ?? '-' }}</td>
-                                <td>
-                                    @if($project->budget)
-                                        Rp {{ number_format($project->budget, 0, ',', '.') }}
-                                    @else
-                                        -
-                                    @endif
-                                </td>
+                                <td>{{ $project->budget ?? '-' }}</td>
                                 <td>{{ $project->location ?? '-' }}</td>
                                 <td>
                                     <button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#fotoModal{{ $project->id }}">

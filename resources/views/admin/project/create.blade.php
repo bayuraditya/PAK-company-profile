@@ -43,7 +43,7 @@
 
                 <div class="mb-3">
                     <label for="budget" class="form-label">Anggaran</label>
-                    <input type="number" name="budget" class="form-control" value="{{ old('budget') }}">
+                    <input type="text" name="budget" class="form-control" value="{{ old('budget') }}">
                     @error('budget')<div class="text-danger small">{{ $message }}</div>@enderror
                 </div>
 
