@@ -14,15 +14,17 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->string('category');
             $table->string('client');
             $table->year('year');
-            $table->string('budget')->nullable();
+            $table->decimal('budget', 15, 2)->nullable();
             $table->string('location');
             $table->text('description')->nullable();
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
