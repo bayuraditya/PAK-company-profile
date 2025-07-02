@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class GuestController extends Controller
 {
+    public function index(){
+        // project
+        // galleries semua foto
+        // contact varibale
+        return view('welcome',compact());
+    }
     // Method untuk menampilkan daftar semua proyek
     public function project(){
         // Data dummy proyek, Anda bisa menggantinya dengan data dari database

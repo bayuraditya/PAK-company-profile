@@ -54,10 +54,10 @@
 
                                     <div class="social-links">
                                         <a href="#"
-                                            ><i class="bi bi-twitter"></i
+                                            ><i class="bi bi-envelope"></i
                                         ></a>
                                         <a href="#"
-                                            ><i class="bi bi-facebook"></i
+                                            ><i class="bi bi-whatsapp"></i
                                         ></a>
                                         <a href="#"
                                             ><i class="bi bi-instagram"></i

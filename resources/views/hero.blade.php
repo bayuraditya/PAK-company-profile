@@ -21,7 +21,7 @@
                                     <a
                                         href="#contact"
                                         class="btn btn-primary"
-                                        >Get a Free Consultation</a
+                                        >Konsultasi Sekarang</a
                                     >
                                     <a href="#services" class="btn btn-outline"
                                         >Our Services</a
@@ -32,12 +32,19 @@
                                         <h3>
                                             <span
                                                 data-purecounter-start="0"
-                                                data-purecounter-end="13"
                                                 data-purecounter-duration="1"
                                                 class="purecounter"
-                                            ></span
-                                            >+
+                                                id="counterYear"
+                                            ></span>+
                                         </h3>
+                                        <script>
+                                            const yearNow = new Date().getFullYear();
+                                            const diff = yearNow - 2012;
+                                            const counterEl = document.getElementById('counterYear');
+                                            counterEl.setAttribute('data-purecounter-end', diff);
+                                        </script>
+
+
                                         <p>Years Experience</p>
                                     </div>
                                     <!-- <div class="stat-item">

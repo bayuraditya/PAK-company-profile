@@ -172,6 +172,9 @@
 
       {{-- Ulangi struktur ini sesuai kebutuhan --}}
     </div>
+      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="700">
+            <a href="/project" class="btn-get-started">Lihat Semua Proyek</a>
+      </div>
   </div>
 </section>
 <style>
@@ -184,15 +187,15 @@
 }
 
 .galleries .row {
-  margin-left: -5px;
-  margin-right: -5px;
+  /* margin-left: -5px; */
+  /* margin-right: -5px; */
 }
 
 .galleries .portfolio-wrap {
   transition: all 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -202,7 +205,7 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   transition: all 0.3s ease-in-out;
 }
 
