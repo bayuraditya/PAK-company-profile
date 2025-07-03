@@ -14,6 +14,5 @@ class Contact extends Model
         'whatsapp',
         'address',
         'instagram',
-        'linkedin',
     ];
 }

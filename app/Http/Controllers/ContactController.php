@@ -20,7 +20,6 @@ class ContactController extends Controller
             'whatsapp'  => 'nullable|string',
             'address'   => 'nullable|string',
             'instagram' => 'nullable|string',
-            'linkedin'  => 'nullable|url',
         ]);
 
         if (Contact::count() > 0) {
@@ -45,7 +44,6 @@ class ContactController extends Controller
             'whatsapp'  => 'nullable|string',
             'address'   => 'nullable|string',
             'instagram' => 'nullable|string',
-            'linkedin'  => 'nullable|url',
         ]);
 
         $contact = Contact::firstOrFail();

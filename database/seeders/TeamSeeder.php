@@ -17,7 +17,6 @@ class TeamSeeder extends Seeder
                 'image_path' => 'images/team/samsuri.png',
                 'email' => '',
                 'instagram' => '',
-                'linkedin' => '',
                 'whatsapp' => '',
             ],
             [
@@ -27,7 +26,6 @@ class TeamSeeder extends Seeder
                 'image_path' => 'images/team/marta tobing.png',
                 'email' => '',
                 'instagram' => '',
-                'linkedin' => '',
                 'whatsapp' => '',
             ],
             [
@@ -37,7 +35,6 @@ class TeamSeeder extends Seeder
                 'image_path' => 'images/team/supandi.png',
                 'email' => '',
                 'instagram' => '',
-                'linkedin' => '',
                 'whatsapp' => '',
             ],
         ];

@@ -15,7 +15,6 @@ class Team extends Model
         'whatsapp',
         'email',
         'instagram',
-        'linkedin',
         'image',
         'image_path',
     ];

@@ -14,7 +14,6 @@ class ContactSeeder extends Seeder
             'whatsapp'  => '+62 853 3805 3331',
             'address'   => 'Jln. Gigit Sari No.3 Jimbaran, Bali, Indonesia',
             'instagram' => 'https://instagram.com/pendiabadikarya',
-            'linkedin'  => 'https://linkedin.com/in/pendiabadikarya',
         ]);
     }
 }

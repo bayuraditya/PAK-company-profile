@@ -61,10 +61,9 @@
                                         />
                                         <div class="team-overlay">
                                            <div class="social-links">
-                                            <a href="{{ $member['social_email'] }}"><i class="bi bi-envelope-fill"></i></a>
-                                            <a href="{{ $member['social_instagram'] }}"><i class="bi bi-instagram"></i></a>
-                                            <a href="{{ $member['social_linkedin'] }}"><i class="bi bi-linkedin"></i></a>
-                                            <a href="{{ $member['social_whatsapp'] }}"><i class="bi bi-whatsapp"></i></a>
+                                            <a href="{{ $member['email'] }}"><i class="bi bi-envelope-fill"></i></a>
+                                            <a href="{{ $member['instagram'] }}"><i class="bi bi-instagram"></i></a>
+                                            <a href="{{ $member['whatsapp'] }}"><i class="bi bi-whatsapp"></i></a>
                                         </div>
 
                                         </div>

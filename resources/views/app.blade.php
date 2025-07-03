@@ -6,8 +6,11 @@
         <title>Pt Pendi Abadi Karya</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />
-        <link rel="shortcut icon" href="{{asset('images/logo pak hitam no bg.png')}}" type="image/x-icon" />
-
+        <link
+            rel="shortcut icon"
+            href="{{asset('images/logo pak hitam no bg.png')}}"
+            type="image/x-icon"
+        />
 
         <!-- Favicons -->
 

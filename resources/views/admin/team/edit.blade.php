@@ -78,17 +78,7 @@
                         @enderror
                     </div>
 
-                    <!-- LinkedIn -->
-                    <div class="col-md-6 mb-3">
-                        <label for="linkedin" class="form-label">LinkedIn</label>
-                        <input type="url" id="linkedin" name="linkedin"
-                            class="form-control @error('linkedin') is-invalid @enderror"
-                            value="{{ old('linkedin', $team->linkedin) }}">
-                        @error('linkedin')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-
+                   
                     <!-- Foto -->
                     <div class="col-md-12 mb-3">
                         <label for="image" class="form-label">Foto</label><br>

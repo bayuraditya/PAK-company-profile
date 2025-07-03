@@ -60,11 +60,11 @@
     
     <script src="{{asset('admin-assets/compiled/js/app.js')}}"></script>
     
-<script src="{{asset('admin-assets/extensions/jquery/jquery.min.js')}}"></script>
-<script src="{{ asset('admin-assets/extensions/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{asset('admin-assets/extensions/jquery/jquery.min.js')}}"></script>
+    <script src="{{ asset('admin-assets/extensions/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 
-<script src="{{asset('admin-assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.min.js')}}"></script>
-<script src="{{asset('admin-assets/static/js/pages/datatables.js')}}"></script>
+    <script src="{{asset('admin-assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.min.js')}}"></script>
+    <script src="{{asset('admin-assets/static/js/pages/datatables.js')}}"></script>
 
   </body>
 </html>

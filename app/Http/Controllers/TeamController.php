@@ -27,11 +27,10 @@ class TeamController extends Controller
             'whatsapp'  => 'nullable|string|max:20',
             'email'     => 'nullable|email|max:255',
             'instagram' => 'nullable|string|max:255',
-            'linkedin'  => 'nullable|url|max:255',
             'image'     => 'nullable|image|max:2048',
         ]);
 
-        $data = $request->only(['name', 'position', 'whatsapp', 'email', 'instagram', 'linkedin']);
+        $data = $request->only(['name', 'position', 'whatsapp', 'email', 'instagram']);
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -64,11 +63,10 @@ class TeamController extends Controller
             'whatsapp'  => 'nullable|string|max:20',
             'email'     => 'nullable|email|max:255',
             'instagram' => 'nullable|string|max:255',
-            'linkedin'  => 'nullable|url|max:255',
             'image'     => 'nullable|image|max:2048',
         ]);
 
-        $data = $request->only(['name', 'position', 'whatsapp', 'email', 'instagram', 'linkedin']);
+        $data = $request->only(['name', 'position', 'whatsapp', 'email', 'instagram']);
 
         if ($request->hasFile('image')) {
             // Hapus gambar lama
