@@ -34,7 +34,6 @@ class Project extends Model
     {
         return SlugOptions::create()
             ->generateSlugsFrom('name')
-            ->saveSlugsTo('slug')
-            ->doNotGenerateSlugsOnUpdate(); // slug tetap saat update
+            ->saveSlugsTo('slug');
     }
 }

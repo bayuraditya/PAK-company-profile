@@ -12,19 +12,19 @@ class ProjectImageSeeder extends Seeder
     {
         $projects = Project::all();
         $projectImageFilenames = [
-            'VILLAS - Villa Wantilan Nusa Dua' => [
+            'Villas' => [
                 'villa-nusa-dua.jpeg',
                 'villa-nusa-dua (2).jpeg',
                 'villa-nusa-dua (3).jpeg',
             ],
-            'CLUB HOUSE - Golf Course Nusa Dua' => [
+            'Club House' => [
                 'club-house-golf-course-nusa-dua.jpeg',
                 'club-house-golf-course-nusa-dua (2).jpeg',
                 'club-house-golf-course-nusa-dua (3).jpeg',
                 'club-house-golf-course-nusa-dua (4).jpeg',
                 'club-house-golf-course-nusa-dua (5).jpeg',
             ],
-            'OFFICE - Back Office Golf Course' => [
+            'Office' => [
                 'back-office-nusa-dua.jpeg',
                 'back-office-nusa-dua (2).jpeg',
                 'back-office-nusa-dua (3).jpeg',
@@ -35,13 +35,13 @@ class ProjectImageSeeder extends Seeder
                 'back-office-nusa-dua (8).jpeg',
                 'back-office-nusa-dua (9).jpeg',
             ],
-            'SUPER STORE & OFFICE - Sunset Road' => [
+            'Super Store' => [
                
             ],
-            'RESIDENCE - Rumah Tinggal Modern' => [
+            'Residence' => [
               
             ],
-            'FACILITY MAINTENANCE - Proyek Berkelanjutan' => [
+            'Facility Maintenance' => [
                 'facility-maintenance-nusa-dua.jpeg',
                 'facility-maintenance-nusa-dua (2).jpeg',
                 'facility-maintenance-nusa-dua (3).jpeg',
