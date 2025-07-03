@@ -3,9 +3,10 @@
                 <!-- Section Title -->
                 <div class="container section-title">
                     <h2>Contact</h2>
-                    <div>
-                        <span>Contact</span>
-                        <span class="description-title">Us</span>
+                    
+                     <div>
+                        <img src="{{asset('images/logo pak hitam no bg no teks.png')}}" width="90px" alt="">
+                        <span>Pt Pendi Abadi Karya</span>
                     </div>
                 </div>
                 <!-- End Section Title -->

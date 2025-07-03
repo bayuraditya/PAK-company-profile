@@ -18,8 +18,8 @@
         <section id="all-projects" class="all-projects section">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
-                    <h2>Seluruh Karya Kami</h2>
-                    <p>Jelajahi portofolio lengkap proyek-proyek konstruksi kami dari berbagai kategori.</p>
+                    <h2>Seluruh Karya Kami</h2><br><br>
+                    <p>Jelajahi portofolio lengkap proyek-proyek konstruksi kami dari berbagai skala dan tipe</p>
                 </div>
 
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
