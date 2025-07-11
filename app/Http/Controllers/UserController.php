@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -75,7 +76,15 @@ class UserController extends Controller
     // Hapus user
     public function destroy(User $user)
     {
+        if (auth()->id() === $user->id) {
+            return redirect()->route('admin.user.index')
+                ->with('error', 'Anda tidak dapat menghapus akun Anda sendiri.');
+        }
+
         $user->delete();
-        return redirect()->route('admin.user.index')->with('success', 'User deleted successfully.');
+
+        return redirect()->route('admin.user.index')
+            ->with('success', 'User berhasil dihapus.');
     }
+
 }

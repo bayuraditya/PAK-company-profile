@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard - Mazer Admin Dashboard</title>
 
-    <link rel="shortcut icon" href="{{asset('images/logo pak hitam no bg.png')}}" type="image/x-icon" />
-    <link
-      rel="shortcut icon"
-      href="{{asset('images/logo pak hitam no bg.png')}}"
-      type="image/png"
-    />
+    <link rel="shortcut icon" href="{{ asset('images/logo pak hitam no bg.png') }}" type="image/png" />
+    <link rel="stylesheet" href="{{ asset('admin-assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin-assets/compiled/css/table-datatable-jquery.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin-assets/compiled/css/app.css') }}" />
+    <link rel="stylesheet" href="{{ asset('admin-assets/compiled/css/app-dark.css') }}" />
+    <link rel="stylesheet" href="{{ asset('admin-assets/compiled/css/iconly.css') }}" />
 
-    <link rel="stylesheet" href="{{asset('admin-assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css')}}">
-    <link rel="stylesheet" href="{{asset('admin-assets/compiled/css/table-datatable-jquery.css')}}">
-    <link rel="stylesheet" href="{{asset('admin-assets/compiled/css/app.css')}}" />
-    <link rel="stylesheet" href="{{asset('admin-assets/compiled/css/app-dark.css')}}" />
-    <link rel="stylesheet" href="{{asset('admin-assets/compiled/css/iconly.css')}}" />
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .page-content {
+        flex: 1;
+      }
+    </style>
   </head>
 
   <body>
-    <script src="{{asset('admin-assets/static/js/initTheme.js')}}"></script>
-    <div id="app">
+    <script src="{{ asset('admin-assets/static/js/initTheme.js') }}"></script>
+
+    <div id="app" class="d-flex flex-column min-vh-100">
       @include('admin.layout.sidebar')
+
       <div id="main">
         <header class="mb-3">
           <a href="#" class="burger-btn d-block d-xl-none">
@@ -40,31 +54,22 @@
               <p>2025 &copy; Pt. Pendi Abadi Karya</p>
             </div>
             <div class="float-end">
-              
+              {{-- Tambahan konten jika diperlukan --}}
             </div>
           </div>
         </footer>
       </div>
     </div>
-    <script src="{{asset('admin-assets/static/js/components/dark.js')}}"></script>
-    <script src="{{asset('admin-assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
 
-    <script src="{{asset('admin-assets/compiled/js/app.js')}}"></script>
-
-    <!-- Need: Apexcharts -->
-    <script src="{{asset('admin-assets/extensions/apexcharts/apexcharts.min.js')}}"></script>
-    <script src="{{asset('admin-assets/static/js/pages/dashboard.js')}}"></script>
-
-    <script src=" {{asset('admin-assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js')}} "></script>
-    
-    
-    <script src="{{asset('admin-assets/compiled/js/app.js')}}"></script>
-    
-    <script src="{{asset('admin-assets/extensions/jquery/jquery.min.js')}}"></script>
+    {{-- Script --}}
+    <script src="{{ asset('admin-assets/static/js/components/dark.js') }}"></script>
+    <script src="{{ asset('admin-assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/compiled/js/app.js') }}"></script>
+    <script src="{{ asset('admin-assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/static/js/pages/dashboard.js') }}"></script>
+    <script src="{{ asset('admin-assets/extensions/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('admin-assets/extensions/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-
-    <script src="{{asset('admin-assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.min.js')}}"></script>
-    <script src="{{asset('admin-assets/static/js/pages/datatables.js')}}"></script>
-
+    <script src="{{ asset('admin-assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/static/js/pages/datatables.js') }}"></script>
   </body>
 </html>

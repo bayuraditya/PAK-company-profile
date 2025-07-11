@@ -28,7 +28,13 @@
                         <div class="swiper-wrapper align-items-center">
                             @forelse ($project->projectImages as $img)
                                 <div class="swiper-slide">
-                                    <img src="{{ asset($img->path) }}" alt="{{ $project->name }}" class="img-fluid">
+                                    <img
+                                        src="{{ asset($img->path) }}"
+                                        alt="{{ $project->name }}"
+                                        class="img-fluid"
+                                        onerror="this.onerror=null;this.src='https://plus.unsplash.com/premium_photo-1681691912442-68c4179c530c?q=80&w=2071&auto=format&fit=crop';"
+                                    />
+
                                 </div>
                             @empty
                                 <div class="swiper-slide">

@@ -27,11 +27,14 @@
                     <div class="col">
                         <div class="project-item">
                             <div class="project-img-container">
+                              
                                 <img
-                                    src="{{ asset(optional($project->projectImages->first())->path ?? 'https://plus.unsplash.com/premium_photo-1681691912442-68c4179c530c?q=80&w=2071&auto=format&fit=crop') }}"
-                                    class="img-fluid"
-                                    alt="{{ $project['name'] }}"
-                                />
+    src="{{ asset(optional($project->projectImages->first())->path ?? '') }}"
+    class="img-fluid"
+    alt="{{ $project['name'] }}"
+    onerror="this.onerror=null; this.src='https://plus.unsplash.com/premium_photo-1681691912442-68c4179c530c?q=80&w=2071&auto=format&fit=crop';"
+/>
+
                                 <div class="project-overlay">
                                     {{-- Anda bisa arahkan ke halaman detail proyek tunggal jika ada --}}
                                     <a href="project/{{$project['slug']}}" title="Lihat Detail Proyek" class="details-link-overlay">
