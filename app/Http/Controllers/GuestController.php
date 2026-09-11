@@ -15,7 +15,7 @@ class GuestController extends Controller
         // dd($projects[0]->projectImages[0]->path);
         $galleries = ProjectImage::with('project')->take(9)->get();
         $teams = Team::get();
-        $contact = Contact::firstOrFail();
+        $contact = Contact::first() ?? new Contact();
         return view('welcome',compact('projects','galleries','teams','contact'));
     }
     // Method untuk menampilkan daftar semua proyek
